@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -66,6 +67,7 @@
                         <li class="scroll"><a href="#Team" data-section="#portfolio">Team</a></li>
                         <li class="scroll"><a href="#contact-area" data-section="#contact-area">Contact</a></li>
                         <li class="scroll"><a href="#Terms" data-section="#portfolio">Terms</a></li>
+                        <li class="scroll"><a class="signup_link" href="#Signup" data-section="#signup">Sign Up</a></li>
                     </ul>
                 </div>
             </nav>
@@ -85,7 +87,7 @@
             <img class="logo" src="images/nvest-logo-vertical-white-w-alpha.png"/>
             <h2 class="section-title text-center wow fadeInDown" style="color: #a0a0a0">A Revolutionary Cryptocurrency Analysis Platform</h2>
             <br/><br/><br/>
-            <a href="#">WHITEPAPER</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">TOKEN DISTRIBUTION</a>
+            <a href="#">WHITEPAPER</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">TOKEN GENERATION</a>
             <!-- <h2> read i=the whitepaper </h2> <h2> ico</h2> -->
         </div>
     </section>
@@ -132,7 +134,7 @@
 
             <div class="section-header">
                 <h2 class="section-title text-center wow fadeInDown">Awesome Tools</h2>
-                <p class="text-center wow fadeInDown">Transformational insights to cryptocurrency markets and the future of trading. Welcome to the berave new world of AI at your fingertips!</p>
+                <p class="text-center wow fadeInDown">Transformational insights to cryptocurrency markets and the future of trading. Welcome to the brave new world of AI at your fingertips!</p>
             </div>
 
             <div class="row align-items-cneter justify-content-start">
@@ -143,7 +145,7 @@
                                 <i class="fa fa-connectdevelop"></i>
                             </div>
                             <h3 class="features-title font-alt">PATTERN FINDER</h3>
-                            Find hidden treasures! History may not always repeat, but it often rhymes. Discover hidden patterns in the data and maximize knowledge from past behavior to game plan for the current market. DEMO
+                            Find hidden treasures! History may not always repeat, but it often rhymes. Discover hidden patterns in the data and maximize knowledge from past behavior and be prepared for what comes next. DEMO
                             </div>
                     </div>
 
@@ -163,7 +165,7 @@
                                 <i class="fa fa-diamond"></i>
                             </div>
                             <h3 class="features-title font-alt">TOKEN DISCOVERY</h3>
-                            Get plugged in, but not overloaded. Leverage state of the art NLP, text mining and statistical technologies to find intuitive insights and knowledge. Easily integrate into your ICO spreadsheet. DEMO 
+                             Get plugged in, but not overloaded. Leverage state of the art NLP, text mining and statistical technologies to find intuitive insights and knowledge. Easily integrate into your ICO spreadsheet. DEMO 
                         </div>
                     </div>
 
@@ -209,8 +211,8 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="0ms">YOU'VE MADE A brave DECISION, <span>WELCOME</span></h2>
-                <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">Join us as we transfrom the cryptocurreny markets.<br />Our token distribution is officially scheduled</p>
-                <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms"><a class="btn btn-primary btn-lg" href="#">BECOME A FOUNDER on April 22, 2018</a></p>
+                <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="100ms">Join us as we transfrom the cryptocurreny markets.<br />Our token generation is officially scheduled</p>
+                <p class="wow fadeInUp" data-wow-duration="300ms" data-wow-delay="200ms"><a class="button" href="#"><span>✓</span>BECOME A FOUNDER<br> on April 22, 2018</a></p>
             </div>
         </div>
     </section>
@@ -235,8 +237,9 @@
                             <i class="fa fa-code"></i>
                         </div>
                         <div class="media-body">
-                            <h4 class="media-heading"><i class="fa fa-pie-chart"></i> DEVELOP & RECEIVE REWARDS</h4>
-                            <p>Complete SDK and API puts the power of nvest in your hands. Expansive integration with Python & R allows software developers, data scientists and tinkerers the ability to easily build and deploy their own apps and obtain rewards from the Nvest community of users.</p>
+                            <h4 class="media-heading"> DEVELOP & RECEIVE REWARDS</h4>
+                            <p>Complete SDK and API puts the power of nvest in your hands. Expansive integration with Python & R allows software developers, data scientists and tinkerers the ability to easily build and deploy their own apps and obtain rewards from the Nvest community of users.
+                            </p>
                         </div>
                     </div>
 
@@ -263,12 +266,12 @@
                     </div>
 
                     <div class="media service-box wow fadeInRight">
-                        <div class="pull-left">
-                            <i class="fa fa-pie-chart"></i>
+                        <div class="pull-left ins_icon">
+                            <img src="images\homepage\visualization-of-data.png" alt="visualization-of-data">
                         </div>
                         <div class="media-body">
                             <h4 class="media-heading">VISUALIZATION SUITE</h4>
-                            <p>Intuitive, easy to use and interactive visualization libraries with native D3.js. Explore complex data including algorithimic results and turn it into knowledge. </p>
+                            <p>Intuitive, easy to use and interactive visualization libraries with native D3.js. Explore complex data including algorithimic results and turn it into knowledge.</p>
                         </div>
                     </div>
 
@@ -294,16 +297,56 @@
                     <div class="features-wrapper" data-wow-duration="300ms" data-wow-delay="0ms">
                         <div class="features-item">
                         <h3 class="features-title font-alt"><i class="fa fa-diamond"></i> Token Supply</h3>
-                        <div class="chart"></div>
+                        <div id="chart1"></div>
                         The token is distributed across team, investor, ...
+                        <div class="legend">
+                            <div class="legend_row">
+                                <div class="color color1"></div> - Team (800)
+                            </div>
+                            <div class="legend_row">
+                                <div class="color color2"></div> - Advisors & Partners (100)
+                            </div>
+                            <div class="legend_row">
+                                <div class="color color3"></div> - Reward Pool (100)
+                            </div>
+                            <div class="legend_row">
+                                <div class="color color4"></div> - Pre Sales (600)
+                            </div>
+                            <div class="legend_row">
+                                <div class="color color5"></div> - Public Sales (400)
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="features-wrapper" data-wow-duration="300ms" data-wow-delay="0ms">
                     <div class="features-item">
                     <h3 class="features-title font-alt"><i class="fa fa-diamond"></i> Budget Distribution</h3>
-                    <div class="chart2"></div>
+                    <div id="chart2"></div>
                     The token is distributed across team, investor, ...
+                    <div class="legend">
+                        <div class="legend_row">
+                            <div class="color color1"></div> - Technology Development (4050)
+                        </div>
+                        <div class="legend_row">
+                            <div class="color color2"></div> - Marketing & Related (600)
+                        </div>
+                        <div class="legend_row">
+                            <div class="color color3"></div> - Exchange Fees (600)
+                        </div>
+                        <div class="legend_row">
+                            <div class="color color4"></div> - Data Feeds (200)
+                        </div>
+                        <div class="legend_row">
+                            <div class="color color5"></div> - Operational (150)
+                        </div>
+                        <div class="legend_row">
+                            <div class="color color6"></div> - Legal & Audit (150)
+                        </div>
+                        <div class="legend_row">
+                            <div class="color color7"></div> - Reserve (300)
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -312,10 +355,11 @@
     </section>
 
 
+    
     <section id="cta2">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title text-center wow fadeInDown">Roadmap</h2>
+                <h2 class="section-title text-center wow fadeInDown">GAME PLAN</h2>
                 <p class="text-center wow fadeInDown">Agile lean startup, fail fast and always listen to our users.</p>
             </div>
 
@@ -331,7 +375,7 @@
 
             <div class="section-header">
                 <h2 class="section-title text-center wow fadeInDown">Meet Our Team</h2>
-                <p class="text-center wow fadeInDown">Our team combines experts in Financial Markets, Machine Learning and Technology. Post funding we will introduce additional team members. We’re focused on quality talent vs building a large organization. </p>
+                <p class="text-center wow fadeInDown">Our team combines experts in Financial Markets, Machine Learning and Technology. Post funding we will introduce additional team members. We’re focused on quality talent vs building a large organization.</p>
             </div>
 
             <div class="text-center">
@@ -345,8 +389,8 @@
             <div class="portfolio-items">
                 <div class="portfolio-item team">
                     <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="images/donut-chart.png" alt="">
-                        <div>Avi, Co-Founder. Extensive experience in financial markets, across asset classes, investment styles, and roles. Senior Investment Analyst at a Miami based Investment Advisor catering to high net worth individuals. Chartered Financial Analyst (CFA) with extensive use and understanding of different investment and trading tools used across financial industry. Former futures trader, specializing in technical analysis and algorithmic trading. R & Python enthusiast, Big Picture Thinker, Avid Reader, Runner.  </div>
+                        <img class="img-responsive" src="images/team/Avi.png" alt="">
+                        <div><p>Avi, Co-Founder, Chartered Financial Analyst (CFA) </p>Financial Market Expert. From USA to China and stocks to crypto currencies, Avi follows the financial markets with a strong fundamental insight. He is a Senior Investment Analyst at high net worth investment advisor in Miami. He is an experienced investor in stocks, bonds, high yield bonds, FX, Emerging markets, asset backed securities and hedge funds. A former futures trader, specializing in technical analysis and algorithmic trading, Avi is a R & Python enthusiast, Big Picture Thinker, Avid Reader and an exercise enthusiast.</div>
 
                     </div>
                 </div><!--/.portfolio-item-->
@@ -354,12 +398,13 @@
 
                 <div class="portfolio-item team">
                     <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="images/portfolio/02.jpg" alt="">
+                        <img class="img-responsive" src="images/team/Saul.png" alt="">
                         <div class="portfolio-info">
-                            <h3>Saul</h3>
+                            <h3>Saul Co-Founder, PhD Computer Science, Machine Learning</h3>
                             <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto">
                                 <img src="images/portfolio/expand.png" alt="">
-                                <div>Experienced full stack software engineer with a PhD in Computer Science in Machine Learning from one of Canada’s leading Universities. Currently Senior Manager for an internet hyper scaler, leading a team of engineers working on AI projects. Previous experience led engineering team of over 30 developers and responsible for company’s high traffic, low latency website. Java, Python, C++ enthusiast, puzzles, and avid proponent of Machine learning before it was cool. </div>
+                                <div><p>Saul Co-Founder, PhD Computer Science, Machine Learning</p>Technology Expert. A practitioner of machine learning before it was cool, Saul likes to be on the leading edge of technology. Saul is an experienced full stack software engineer, currently managing an expert team focused on AI at one of the world’s largest technology companies. Previously he managed a technology team of over 30, with responsibilities including the operation of a high trafficked low latency website. Saul is quality focused, enjoys puzzles and …. Something fun…  </div>
+
                             </a>
                         </div>
                     </div>
@@ -367,16 +412,56 @@
 
                 <div class="portfolio-item team">
                     <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="images/portfolio/03.jpg" alt="">
-                        <div class="portfolio-info">
-                            <h3>Portfolio Item 3</h3>
-                            <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto">
-                                <img src="images/portfolio/expand.png" alt="">
+                        <img class="img-responsive" src="images/team/Waleem.png" alt="">
+                        <div><p>Waleem, PhD Financial Economics</p>Data Scientist. Waleem brings strong academic and practical experience with a focus on financial markets and business applications. Currently he is a manager of Business Intelligence for a large Canadian pension servicer. He is a Machine learning expert, a fan of the Simpsons and enjoys talking politics.</div>
 
-                            </a>
-                        </div>
                     </div>
                 </div><!--/.portfolio-item-->
+
+
+                                <div class="portfolio-item team">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/team/Jenni.png" alt="">
+                        <div><p>Jenni, BSc Computer and Electronics Engineering</p>Software Engineer. Jenni has several years of software development with a focus on statistical modelling and machine learning. She has worked at Speech, Vision & Robotics Labs at Cambridge and has experience on various projects including autonomous driving, bio informatics, risk management, algorithmic trading and machine vision. Jenni writes fiction and is an advocate for the humane treatment of animals.</div>
+
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                             <div class="portfolio-item team">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/team/Alesandro.png" alt="">
+                        <div><p>Alessandro, BSc Computer Science, MBA</p>Software Engineer. Alessandro is experienced in software development and quantitative finance. He is a crypto enthusiast and is currently building various technology tools to help traders. He has several years of web development experience and has built and traded automated trading systems. Alesandro enjoys playing the guitar and surfing.</div>
+
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                             <div class="portfolio-item team">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/team/Bruno.png" alt="">
+                        <div><p>Bruno, MBA</p>Marketing Manager. Bruno has several years’ experience in digital marketing with a specific focus on the financial industry. He has managed various campaigns that have decidedly improved company growth. Bruno enjoys travelling and is currently training for an Ironman. </div>
+
+                    </div>
+                </div><!--/.portfolio-item-->
+
+
+                             <div class="portfolio-item advisors">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/team/Leandro.png" alt="">
+                        <div><p>Leandro Ruschel, Founder Liberta Global and L&S Group</p>The L&S group represents more than seven different companies in Brazil and provides financial services including overseeing R$ 700M for client advisory and has over 150,000 subscribers to their comprehensive financial education including a well-regarded trading school. 
+  Leandro is regularly interviewed by major Brazilian media and is renown in the Brazilian financial community for his influential role developing Technical Analysis and is the author of the book “Me, the Stock Market and my Grandmother” (Eu, A Bolsa E Minha Avo). </div>
+
+                    </div>
+                </div><!--/.portfolio-item-->
+
+                          <div class="portfolio-item advisors">
+                    <div class="portfolio-item-inner">
+                        <img class="img-responsive" src="images/team/Mika.png" alt="">
+                        <div><p>Mickael Salabi, Founder Tokenpot Capital, Crypto Hedge Fund</p>Mickael has been a blockchain enthusiast since 2012 and has participated in many projects during the past 6 years including being an early investor in Bitcoin, Ethereum, Iota, Qtum and many other projects. Outside his involvement in crypto, Mickael has worked as senior technical architect and has been involved with the technology industry for several years.</div>
+
+                    </div>
+                </div><!--/.portfolio-item-->
+
+
 
                 <div class="portfolio-item advisors">
                     <div class="portfolio-item-inner">
@@ -404,18 +489,7 @@
                     </div>
                 </div><!--/.portfolio-item-->
 
-                <div class="portfolio-item advisors">
-                    <div class="portfolio-item-inner">
-                        <img class="img-responsive" src="images/portfolio/06.jpg" alt="">
-                        <div class="portfolio-info">
-                            <h3>Portfolio Item 5</h3>
-                            <a class="preview" href="images/portfolio/full.jpg" rel="prettyPhoto">
-                                <img src="images/portfolio/expand.png" alt="">
 
-                            </a>
-                        </div>
-                    </div>
-                </div><!--/.portfolio-item-->
 
                 <div class="portfolio-item animation art">
                     <div class="portfolio-item-inner">
@@ -605,8 +679,8 @@
                     </p>
 
                     <ul class="social-icons text-center">
-                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-telegram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>   <!-- Comment: Please make bigger -->
+                        <li><a href="#"><i class="fa fa-telegram"></i></a></li>  <!-- Comment: not working?? -->
                         <li><a href="#"><i class="fa fa-reddit"></i></a></li>
                         <li><a href="#"><i class="fa fa-github"></i></a></li>
                     </ul>
@@ -621,6 +695,28 @@
         </div>
     </footer><!--/#footer-->
 
+    <div class="popup">
+        <form id="signup" name="signup" class="signup" method="post">
+            <!-- Hidden Required Fields -->
+            <input type="hidden" name="project_name" value="http://nvest.ai">
+            <input type="hidden" name="admin_email" value="avi@nvest.io">
+            <input type="hidden" name="form_subject" value="The new submission on your site">
+            <!-- END Hidden Required Fields -->
+
+            <h3>SIGN UP</h3>
+            <div id="close_popup" class="close_popup"><img src="images/cancel.png" alt="close"></div>
+            <input type="text" id="name" class="input_field" maxlength="256" name="name" placeholder="Enter Your Name" required>
+            <input type="email" id="email" class="input_field" maxlength="256" name="email" placeholder="Enter Your email" required>
+            <input type="submit" id="submit" class="submit" value="SIGN UP">
+            <div class="soclink-wrapper">
+                <a href="#"><img src="images/socicons/telegram.png" alt="telegram"></a>
+            </div>
+        </form>
+    </div>
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script src="js/draw.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js'></script>
     <script src="js/jquery.js"></script>
@@ -634,7 +730,7 @@
     <script src="js/main.js"></script>
     <script src="js/c3.min.js"></script>
     <script src="js/d3.min.js"></script>
-    <script src="js/charts.js"></script>
+    <script src="script.js"></script>
     
 
 </body>
