@@ -167,7 +167,7 @@ jQuery(function($) {'use strict';
 				form.prepend( form_status.html('<p><i class="fa fa-spinner fa-spin"></i> Email is sending...</p>').fadeIn() );
 			}
 		}).done(function(data){
-			form_status.html('<p class="text-success">Thank you for contacting us. As early as possible  we will contact you</p>').delay(3000).fadeOut();
+			form_status.html('<p class="text-success">Thank you for contact us. As early as possible  we will contact you</p>').delay(3000).fadeOut();
 		});
 	});
 
@@ -175,135 +175,33 @@ jQuery(function($) {'use strict';
 	$("a[rel^='prettyPhoto']").prettyPhoto({
 		social_tools: false
 	});
-
-
-
-});
-
-
-var width = 400,
-  height = 400,
-  radius = 200,
-  colors = d3.scale.category20();
-
-var piedata = [
-  {
-    label: "Team",
-    value: 800
-  },
-  {
-    label: "Advisors & Partners",
-    value: 100
-  },
-  {
-    label: "Reward Pool",
-    value: 100
-  },
-  {
-    label: "Pre Sales",
-    value: 600
-  },
-  {
-    label: "Public Sales",
-    value: 400
-  }];
-
-var piedata2 = [
-  {
-    label: "Technology Development",
-    value: 4050
-  },
-  {
-    label: "Marketing & Related",
-    value: 600
-  },
-  {
-    label: "Exchange Fees",
-    value: 600
-  },
-  {
-    label: "Data Feeds",
-    value: 200
-  },
-  {
-    label: "Operational",
-    value: 150
-  },
-    {
-    label: "Legal & Audit",
-    value: 150
-  },
-  {
-    label: "Reserve",
-    value: 300
-  }];
-
-var pie = d3.layout.pie().value(function(d) {
-  return d.value;
-});
-
-var arc = d3.svg.arc().outerRadius(radius);
-
-var myChard = d3
-  .select(".chart")
-  .append("svg")
-  .attr("width", width)
-  .attr("height", height)
-  .append("g")
-  .attr(
-    "transform",
-    "translate(" + (width - radius) + ", " + (height - radius) + ")"
-  )
-  .selectAll("path")
-  .data(pie(piedata))
-  .enter()
-  .append("g")
-	.attr("class", "slice");
 	
-var myChard2 = d3
-  .select(".chart2")
-  .append("svg")
-  .attr("width", width)
-  .attr("height", height)
-  .append("g")
-  .attr(
-    "transform",
-    "translate(" + (width - radius) + ", " + (height - radius) + ")"
-  )
-  .selectAll("path")
-  .data(pie(piedata2))
-  .enter()
-  .append("g")
-  .attr("class", "slice");
+});
 
-var slices = d3
-  .selectAll("g.slice")
-  .append("path")
-  .attr("fill", function(d, i) {
-    return colors(i);
-  })
-  .attr("d", arc)
-  .on("mouseover", function() {
-    d3.select(this).style("opacity", 0.8);
-  })
-  .on("mouseout", function() {
-    d3.select(this).style("opacity", 1);
-  });
+//Popup Signup
 
-var text = d3
-  .selectAll("g.slice")
-  .append("text")
-  .text(function(d) {
-    return d.data.label;
-  }) //slice = d, so we the slice's data.
-  .attr("text-anchor", "middle")
-  .attr("fill", "white")
-  .attr("transform", function(d) {
-    d.innerRadius = 0;
-    d.outerRadius = radius;
-    return "translate(" + arc.centroid(d) + ")"; //puts text at center of slice
-  });
+var link = document.querySelector(".signup_link");
+var popup = document.querySelector(".popup");
+var close = popup.querySelector(".close_popup");
+var form = popup.querySelector("signup");
 
+var name = popup.querySelector("[name=name]");
+var email = popup.querySelector("[name=email]");
 
+link.addEventListener("click", function (event) {
+	event.preventDefault();
+	popup.classList.add("popup-show");
+});
+close.addEventListener("click", function (event) {
+	event.preventDefault();
+	popup.classList.remove("popup-show");
+});
 
-force.start();
+window.addEventListener("keydown", function (event) {
+	if (event.keyCode === 27) {
+		if (popup.classList.contains("popup-show")) {
+			popup.classList.remove("popup-show");
+		}
+	}
+});
+
