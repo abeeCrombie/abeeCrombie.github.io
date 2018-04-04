@@ -1,11 +1,8 @@
-// Animation for investors to developers graph (I-to-D animation)
-// plus
-// Robot animation
-
-
 $(window).on('load', function() {
     ItoD_setOrientation(0);
     ItoD_startAnimation();
+
+    appearOnLoad();
 
     robotAnimation();
 
@@ -16,9 +13,69 @@ $(window).on('resize', function() {
     ItoD_setOrientation(0.8);
 });
 
-/* ************************************************************************************************** */
+$(document).scroll(function() {
+    appaerOnScroll();
+});
+
+/* ************************************* START OF INITIAL TRANSITIONS ******************************* */
+
+function appaerOnScroll() {
+
+    var windowTop = $(document).scrollTop();
+    offest = $(window).height() / 3 * 2;
+
+    $('.appear-on-scroll-up').each(function () {
+        var elementHeight = $(this).height();
+        var elementTop = $(this).offset().top;
+
+        if (elementTop < (windowTop + offest)) {
+            TweenLite.fromTo($(this), 1, {y: elementHeight/2}, {y: 0, visibility: 'visible'});
+            $(this).removeClass('appear-on-scroll-up');
+        }
+    });
+    $('.appear-on-scroll-right').each(function () {
+        var elementWidth = $(this).width();
+        var elementTop = $(this).offset().top;
+
+        if (elementTop < (windowTop + offest)) {
+            TweenLite.fromTo($(this), 1, {x: elementWidth/2}, {x: 0, visibility: 'visible'});
+            $(this).removeClass('appear-on-scroll-right');
+        }
+    });
+}
+
+
+function appearOnLoad() {
+
+    var windowTop = $(window).scrollTop();
+    var windowBottom = windowTop + $(window).height();
+    var tl = new TimelineLite({ });
+
+    $('.appear-on-scroll-up').each(function () {
+        var elementHeight = $(this).height();
+        var elementTop = $(this).offset().top;
+        var elementBottom = elementTop + $(this).outerHeight();
+
+        if (elementBottom > windowTop && elementTop < windowBottom) {
+            tl.fromTo($(this), 1, {y: elementHeight/2, visibility: 'hidden'}, {y: 0, visibility: 'visible'}, '-=0.6');
+            $(this).removeClass('appear-on-scroll-up');
+        }
+    });
+    $('.appear-on-scroll-right').each(function () {
+        var elementWidth = $(this).width();
+        var elementTop = $(this).offset().top;
+        var elementBottom = elementTop + $(this).outerHeight();
+
+        if (elementBottom > windowTop && elementTop < windowBottom) {
+            tl.fromTo($(this), 1, {x: elementWidth/2, visibility: 'hidden'}, {x: 0, visibility: 'visible'}, '-=0.6');
+            $(this).removeClass('appear-on-scroll-right');
+        }
+    });
+}
+
+/* ************************************* END OF INITIAL TRANSITIONS  ******************************** */
+
 /* ************************************* START OF ROUND CHARTS ANIMATION **************************** */
-/* ************************************************************************************************** */
 
 function roundChartsAnimation() {
     var animationTime = 0.1;
@@ -40,9 +97,10 @@ function roundChartsAnimation() {
     });
 }
 
-/* ************************************************************************************************** */
+/* ************************************* END OF ROUND CHARTS ANIMATION ****************************** */
+
+
 /* ************************************* START OF TRADERS / DEVELOPERS ANIMATION ******************** */
-/* ************************************************************************************************** */
 
 function ItoD_startAnimation() {
     var tl = new TimelineMax({repeat: -1});
@@ -88,15 +146,11 @@ function ItoD_setOrientation(animationTime) {
         TweenLite.to($('.line'), animationTime, {rotation: 0, transformOrigin: "center", ease: Linear.easeNone});
     }
 }
-/* ************************************************************************************************** */
+
 /* ************************************* END OF TRADERS / DEVELOPERS ANIMATION ********************** */
-/* ************************************************************************************************** */
 
 
-
-/* ************************************************************************************************** */
 /* ************************************* START OF ROBOT ANIMATION *********************************** */
-/* ************************************************************************************************** */
 
 function robotAnimation() {
     var shoulders = $('.stage-1 .shoulders'),
@@ -261,6 +315,4 @@ function robotAnimation() {
 
     tl.delay(0.5);
 }
-/* ************************************************************************************************** */
 /* ************************************* END OF ROBOT ANIMATION ************************************* */
-/* ************************************************************************************************** */
