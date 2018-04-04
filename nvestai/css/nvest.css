@@ -1128,7 +1128,6 @@ ul.navbar-nav .country-selector .dropdown-toggle img {
 .section-8 {
     padding-top: 70px;
     padding-bottom: 100px;
-    /*background-color: #34383C;*/
     background-image: -webkit-linear-gradient(135deg, #34383C 46%, #9e3333);
     background-image: linear-gradient(315deg, #34383C 46%, #9e3333);
     color: #fff;
@@ -1146,6 +1145,7 @@ ul.navbar-nav .country-selector .dropdown-toggle img {
 }
 .section-8 img {
     width: 100%;
+    max-width: 950px;
     display: block;
     margin: 0 auto;
 }
