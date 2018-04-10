@@ -1412,13 +1412,24 @@ footer .footer-links a.airdrop-link {
 #modalSubscriptionForm {
 
 }
-
-#modalSubscriptionForm label {
-    font-size: 1.2em;
+#modalSubscriptionForm .asterisk {
+    color: #a00;
 }
-
+#modalSubscriptionForm .indicates-required {
+    font-size: 0.8rem;
+    color: #a00;
+    float: right;
+}
+#modalSubscriptionForm label {
+    /*font-size: 1em;*/
+}
 #modalSubscriptionForm input {
     border-radius: 0;
+    outline: none;
+    box-shadow: none !important;
+}
+#modalSubscriptionForm input.red-border {
+    border-color: #a00;
 }
 
 #modalSubscriptionForm .btn-submit {

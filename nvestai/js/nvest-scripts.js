@@ -1,15 +1,12 @@
-
-
 // Animate hamburger icon
 $('.navbar-toggler').click(function(){
     $('.nav-icon').toggleClass('open');
 });
 
-// Animate country selection smooth
+// Animate country selection smoothly
 $('.dropdown').on('show.bs.dropdown', function(e){
     $(this).find('.dropdown-menu').first().stop(true, true).slideDown(300);
 });
-
 $('.dropdown').on('hide.bs.dropdown', function(e){
     $(this).find('.dropdown-menu').first().stop(true, true).slideUp(200);
 });
@@ -38,10 +35,8 @@ $('.go-to-tokens').click(function () {
     }, 600);
 });
 
-
-
+// Manage picture selection in the third section
 $('.section-3 .pilot-btn').click(function () {
-    console.log('q');
     if (!$(this).hasClass('active')) {
         $(this).addClass('active');
         $('.section-3 .wizard-btn').removeClass('active');
@@ -51,7 +46,6 @@ $('.section-3 .pilot-btn').click(function () {
     }
 });
 $('.section-3 .wizard-btn').click(function () {
-    console.log('w');
     if (!$(this).hasClass('active')) {
         $(this).addClass('active');
         $('.section-3 .pilot-btn').removeClass('active');
@@ -61,7 +55,7 @@ $('.section-3 .wizard-btn').click(function () {
 });
 
 
-
+// Use one modal window for all youtube links
 var $videoSrc;
 $('.video-btn').click(function() {
     $videoSrc = $(this).data('src');
@@ -73,4 +67,40 @@ $('#toolVideoModal').on('shown.bs.modal', function (e) {
 // stop playing the youtube video when close the modal
 $('#toolVideoModal').on('hide.bs.modal', function (e) {
     $("#video").attr('src', $videoSrc);
+});
+
+// Validate e-mail form in sign up modal
+$('#mc_embed_signup #mce-EMAIL').on('input', function() {
+    var emailRegex = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    var emailTouchedRegex = /^([A-Za-z0-9@.]{1,})$/;
+
+    var input = $(this);
+    if (input.val() && !emailTouchedRegex.test(input.val()) && !input.hasClass('valid')) {
+        input.addClass('red-border');
+    } else {
+        input.removeClass('red-border');
+    }
+
+    if(emailRegex.test(input.val())) {
+        input.removeClass("invalid").addClass("valid");
+        $('#mc_embed_signup input[type="submit"]').prop('disabled', false);
+        $('#mc_embed_signup .submit-wrap > div').hide();
+    } else {
+        input.removeClass("valid").addClass("invalid");
+        $('#mc_embed_signup input[type="submit"]').prop('disabled', true);
+        $('#mc_embed_signup .submit-wrap > div').show();
+    }
+});
+$('#mc_embed_signup #mce-EMAIL').change(function () {
+    var input = $(this);
+    if (!input.hasClass('valid') || !input.val()) {
+        input.addClass('red-border');
+    }
+});
+// Click on disabled button
+$('#mc_embed_signup .submit-wrap > div').click(function () {
+    var input = $('#mc_embed_signup #mce-EMAIL');
+    if (!input.hasClass('valid') || !input.val()) {
+        input.addClass('red-border');
+    }
 });
