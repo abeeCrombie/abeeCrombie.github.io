@@ -1,26 +1,26 @@
 $(window).on('load', function() {
     ItoD_setOrientation(0);
+    communitySetSize();
     ItoD_startAnimation();
-
     appearOnLoad();
-
     robotAnimation();
-
+    commmunityAnimation();
     roundChartsAnimation();
 });
 
 $(window).on('resize', function() {
     ItoD_setOrientation(0.8);
+    communitySetSize();
 });
 
 $(document).scroll(function() {
-    appaerOnScroll();
+    appearOnScroll();
 });
+
 
 /* ************************************* START OF INITIAL TRANSITIONS ******************************* */
 
-function appaerOnScroll() {
-
+function appearOnScroll() {
     var windowTop = $(document).scrollTop();
     offest = $(window).height() / 3 * 2;
 
@@ -46,7 +46,6 @@ function appaerOnScroll() {
 
 
 function appearOnLoad() {
-
     var windowTop = $(window).scrollTop();
     var windowBottom = windowTop + $(window).height();
     var tl = new TimelineLite({ });
@@ -74,6 +73,128 @@ function appearOnLoad() {
 }
 
 /* ************************************* END OF INITIAL TRANSITIONS  ******************************** */
+
+/* ************************************* START OF COMMUNITY ANIMATION ******************************* */
+
+function communitySetSize() {
+    windowWidth = window.innerWidth;
+    windowHeight = window.innerHeight;
+    ratio = windowWidth / windowHeight;
+    if (windowWidth < 576) {
+        ratio = 2 * ratio / 3;
+    }
+    x0 = (2900 - 1632 * ratio) / 2;
+    x1 = 1632 * ratio;
+
+    communityImg = $('.section-6 svg');
+    communityImg.attr('viewBox', x0 + ' 0 ' + x1 + ' 1632');
+
+    globe = $('.section-6 .globe');
+    leftLines = $('.section-6 .left-figure');
+
+    if (windowWidth  >= 1200) {
+        TweenMax.set(globe, { scale: 0.9, x: 0, y: 40, transformOrigin: 'center' });
+        TweenMax.set(leftLines, { scale: 0.8, transformOrigin: 'left bottom' });
+    } else if (windowWidth >= 992) {
+        TweenMax.set(globe, { scale: 0.8, x: -100, y: 40, transformOrigin: 'center' });
+        TweenMax.set(leftLines, { scale: 0.8, transformOrigin: 'left bottom' });
+    } else if (windowWidth >= 768) {
+        TweenMax.set(globe, { scale: 0.6, x: -250, y: 90, transformOrigin: 'center' });
+        TweenMax.set(leftLines, { scale: 0.8, transformOrigin: 'left bottom' });
+    } else if (windowWidth >= 576) {
+        TweenMax.set(globe, { scale: 0.6, x: -450, y: 200, transformOrigin: 'center' });
+        TweenMax.set(leftLines, { scale: 0.8, transformOrigin: 'left bottom' });
+    } else {
+        TweenMax.set(globe, { scale: 0.55, x: -650, y: 200, transformOrigin: 'center' });
+        TweenMax.set(leftLines, { scale: 0.5, transformOrigin: 'left bottom' });
+    }
+
+    communityImg.css('opacity', '1');
+}
+
+function commmunityAnimation() {
+    tlCommunityBlack = new TimelineMax({delay: 1.5, repeat: -1, repeatDelay: 0.5});
+    circles = $('.section-6 .community-black .circle-to-scale');
+    tlCommunityBlack
+        .fromTo(circles[0], 2, { scale: 0.7, transformOrigin: 'center' },{ scale: 1.1, ease: Linear.easeNone })
+        .to(circles[0], 0.5, { opacity: 0 }, '-=0.5')
+        .fromTo(circles[4], 2, { scale: 0.7, transformOrigin: 'center' },{ scale: 1.1, ease: Linear.easeNone }, '-=2')
+        .to(circles[4], 0.5, { opacity: 0 }, '-=0.5')
+        .fromTo(circles[1], 2, { scale: 0.7, transformOrigin: 'center' },{ scale: 1.1, ease: Linear.easeNone }, '-=1.5')
+        .to(circles[1], 1, { opacity: 0 }, '-=1')
+        .fromTo(circles[5], 2, { scale: 0.7, transformOrigin: 'center' },{ scale: 1.1, ease: Linear.easeNone }, '-=2')
+        .to(circles[5], 1, { opacity: 0 }, '-=1')
+        .fromTo(circles[2], 2, { scale: 0.8, transformOrigin: 'center'},{ scale: 1.2, ease: Linear.easeNone }, '-=1.5')
+        .to(circles[2], 1, {opacity: 0 }, '-=1')
+        .fromTo(circles[6], 2, { scale: 0.8, transformOrigin: 'center' },{ scale: 1.2, ease: Linear.easeNone }, '-=2')
+        .to(circles[6], 1, { opacity: 0 }, '-=1')
+        .fromTo(circles[3], 2, { scale: 0.8, transformOrigin: 'center' },{ scale: 1.2, ease: Linear.easeNone }, '-=1.5')
+        .to(circles[3], 1, { opacity: 0 }, '-=1')
+        .fromTo(circles[7], 2, { scale: 0.8, transformOrigin: 'center' },{ scale: 1.2, ease: Linear.easeNone }, '-=2')
+        .to(circles[7], 1, { opacity: 0 }, '-=1');
+
+
+    tlPython = new TimelineMax({delay: 0.5, repeat: -1, repeatDelay: 1});
+    circles = $('.section-6 .python .circle-to-scale');
+    tlPython.fromTo(circles[0], 2, { scale: 0.7, transformOrigin: 'center' },{ scale: 1.3, ease: Linear.easeNone })
+            .to(circles[0], 0.5, { opacity: 0 }, '-=0.5')
+            .fromTo(circles[1], 2, { scale: 0.9, transformOrigin: 'center' },{ scale: 1.5, ease: Linear.easeNone }, '-=1')
+            .to(circles[1], 1,   { opacity: 0 }, '-=1');
+
+    tlR = new TimelineMax({delay: 1, repeat: -1});
+    circles = $('.section-6 .r-language .circle-to-scale');
+    tlR.fromTo(circles[0], 2, { scale: 0.7, transformOrigin: 'center' },{ scale: 1.2, ease: Linear.easeNone })
+        .to(circles[0], 0.5, { opacity: 0 }, '-=0.5')
+        .fromTo(circles[1], 2, { scale: 0.7, transformOrigin: 'center' },{ scale: 1.2, ease: Linear.easeNone }, '-=1.7')
+        .to(circles[1], 1,   { opacity: 0 }, '-=1')
+        .fromTo(circles[2], 2, { scale: 0.8, transformOrigin: 'center' },{ scale: 1.2, ease: Linear.easeNone }, '-=1.7')
+        .to(circles[2], 1,   { opacity: 0 }, '-=1')
+        .fromTo(circles[3], 2, { scale: 0.9, transformOrigin: 'center' },{ scale: 1.2, ease: Linear.easeNone }, '-=1.7')
+        .to(circles[3], 1,   { opacity: 0 }, '-=1');
+
+    tlCommunityWhite = new TimelineMax({delay: 2, repeat: -1, repeatDelay: 0.5});
+    circles = $('.section-6 .community-white .circle-to-scale');
+    tlCommunityWhite
+        .fromTo(circles[0], 2, { scale: 0.8, transformOrigin: 'center' },{ scale: 1.4, ease: Linear.easeNone })
+        .to(circles[0], 0.5, { opacity: 0 }, '-=0.5');
+
+    tljs = new TimelineMax({delay: 3, repeat: -1});
+    circles = $('.section-6 .js .circle-to-scale');
+    tljs
+        .fromTo(circles, 2, { scale: 0.7, transformOrigin: 'center' },{ scale: 1.2, ease: Linear.easeNone })
+        .to(circles, 0.5, { opacity: 0 }, '-=0.5');
+
+    tlEthereum = new TimelineMax({delay: 0, repeat: -1});
+    circles = $('.section-6 .ethereum .circle-to-scale');
+    tlEthereum.fromTo(circles[0], 2, { scale: 0.7, transformOrigin: 'center' },{ scale: 1.15, ease: Linear.easeNone })
+        .to(circles[0], 0.5, { opacity: 0 }, '-=0.5')
+        .fromTo(circles[1], 2, { scale: 0.8, transformOrigin: 'center' },{ scale: 1.3, ease: Linear.easeNone }, '-=1.5')
+        .to(circles[1], 1,   { opacity: 0 }, '-=1');
+
+    tlStar = new TimelineMax({delay: 2, repeat: -1});
+    circles = $('.section-6 .star .circle-to-scale');
+    tlStar
+        .fromTo(circles, 2, { scale: 0.7, transformOrigin: 'center' },{ scale: 1.3, ease: Linear.easeNone })
+        .to(circles, 0.5, { opacity: 0 }, '-=0.5');
+
+    points = $('.section-6 .point-to-scale');
+    tlP1 = new TimelineMax({yoyo: true, repeat: -1});
+    tlP1.fromTo(points[0], 1, {scale: 0.8}, { scale: 1.5, transformOrigin: 'center' }, '+=1');
+    tlP2 = new TimelineMax({yoyo: true, repeat: -1});
+    tlP2.to(points[1], 1.5, { scale: 1.2, transformOrigin: 'center' });
+    tlP3 = new TimelineMax({yoyo: true, repeat: -1});
+    tlP3.fromTo(points[2], 1, {scale: 0.8}, { scale: 1.6,  transformOrigin: 'center' }, '+=0.5');
+    tlP4 = new TimelineMax({yoyo: true, repeat: -1});
+    tlP4.to(points[3], 0.5, { scale: 1.1, transformOrigin: 'center' }, '+=1');
+    tlP5 = new TimelineMax({yoyo: true, repeat: -1});
+    tlP5.fromTo(points[4], 1, {scale: 0.8}, { scale: 1.3, transformOrigin: 'center' }, '+=0.5');
+    tlP6 = new TimelineMax({yoyo: true, repeat: -1});
+    tlP6.to(points[5], 1, { scale: 1.4, transformOrigin: 'center' });
+    tlP7 = new TimelineMax({yoyo: true, repeat: -1});
+    tlP7.to(points[6], 1, { scale: 1.5, transformOrigin: 'center' }, '+=0.5');
+}
+
+/* ************************************* END OF COMMUNITY ANIMATION ********************************* */
 
 /* ************************************* START OF ROUND CHARTS ANIMATION **************************** */
 

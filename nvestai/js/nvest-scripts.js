@@ -54,6 +54,18 @@ $('.section-3 .wizard-btn').click(function () {
     }
 });
 
+// Use modal window for full size images
+var $imageSrc;
+$('.open-fill-size').click(function() {
+    if ($(this).parent().hasClass('pilot-img')) {
+        $imageSrc = 'images/platform.png';
+    } else if ($(this).parent().hasClass('wizard-img')) {
+        $imageSrc = 'images/einstein.jpg';
+    }
+});
+$('#fullImgModal').on('show.bs.modal', function (e) {
+    $("#fullSizeImg").attr('src', $imageSrc );
+});
 
 // Use one modal window for all youtube links
 var $videoSrc;
@@ -61,13 +73,13 @@ $('.video-btn').click(function() {
     $videoSrc = $(this).data('src');
 });
 $('#toolVideoModal').on('shown.bs.modal', function (e) {
-    // set the video src to autoplay and not to show related video
-    $("#video").attr('src', $videoSrc + '?rel=0&amp;showinfo=0&amp;modestbranding=1&amp;autoplay=1' );
+    $("#video").attr('src', $videoSrc + "?rel=0&amp;showinfo=0&amp;modestbranding=1&amp;autoplay=1;" );
+    $("#video").attr('allowFullScreen', "allowFullScreen" );
 });
-// stop playing the youtube video when close the modal
 $('#toolVideoModal').on('hide.bs.modal', function (e) {
     $("#video").attr('src', $videoSrc);
 });
+
 
 // Validate e-mail form in sign up modal
 $('#mc_embed_signup #mce-EMAIL').on('input', function() {

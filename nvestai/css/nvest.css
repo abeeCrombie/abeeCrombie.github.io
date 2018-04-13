@@ -24,6 +24,7 @@ img {
 }
 ul.navbar-nav > li {
     margin: 0;
+    padding-top: 0;
 }
 ul.navbar-nav > li > a {
     color: #eee;
@@ -109,6 +110,7 @@ ul.navbar-nav .country-selector .dropdown-toggle img {
     }
     ul.navbar-nav > li {
         margin: 0 4px;
+        padding-top: 12px;
     }
     ul.navbar-nav > li a {
         padding-left: 0;
@@ -131,6 +133,7 @@ ul.navbar-nav .country-selector .dropdown-toggle img {
     }
     ul.navbar-nav > li {
         margin: 0 5px;
+        padding-top: 10px;
     }
     ul.navbar-nav > li a {
         padding-right: .5rem;
@@ -856,28 +859,30 @@ ul.navbar-nav .country-selector .dropdown-toggle img {
 }
 
 
-/******************** End of Section #5 ****************/
+/******************** End of Section #5 ********************/
 
 /*!******************** Section #6 ***********************!*/
 
 .section-6 {
     width: 100%;
-    background-color: #f0f0f0;
-    background-image: url('../images/community3.png');
-    background-position: 50% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding-top: 70px;
-    padding-bottom: 100px;
     position: relative;
     text-shadow: 0 0 15px #f0f0f0;
-    height: 100vh;
+    height: 150vh;
 }
+.section-6 svg {
+    width: 100%;
+    height: auto;
+    opacity: 0;
+}
+.section-6 .container {
+    padding-top: 30px;
+    margin-top: -150vh;
+}
+
 .section-6 ul {
     list-style: none;
-    margin: 30px auto 30px 0;
+    margin: 10px auto 30px 0;
     padding-left: 0;
-    font-weight: bold;
 }
 .section-6 li {
     padding-left: 1em;
@@ -888,7 +893,7 @@ ul.navbar-nav .country-selector .dropdown-toggle img {
     padding-right: 5px;
 }
 .section-6 p {
-    display: none;
+    font-size: 0.8em;
 }
 .section-6 .bottom-line {
     position: absolute;
@@ -900,20 +905,173 @@ ul.navbar-nav .country-selector .dropdown-toggle img {
     margin: 5px;
     font-size: 1em;
 }
+
+/******************** Community image  animation *******/
+
+.section-6 .back polygon {
+    fill: #F3F3F3;
+    fill-rule: nonzero;
+}
+.section-6 .back path {
+    stroke: #A3A3A3;
+    stroke-width: 0.1;
+    opacity: 0.1;
+}
+.section-6 .left-figure .lines {
+    stroke: #B3B3B3;
+    stroke-width: 5;
+    opacity: 0.8;
+    fill: none;
+    fill-rule: nonzero
+}
+.section-6 .left-figure .point {
+    fill: #B3B3B3;
+    fill-rule: nonzero;
+}
+.section-6 .left-figure .point-circle {
+    stroke: #B3B3B3;
+    stroke-width: 3;
+    fill: none;
+    fill-rule: nonzero
+}
+
+.section-6 .globe .dark-points {
+    fill: #4d4d4d;
+    fill-rule: nonzero;
+}
+.section-6 .globe .light-points {
+    fill: #868686;
+    fill-rule: nonzero;
+}
+.section-6 .globe .dotted-lines .small {
+    stroke: #4D4D4D;
+    stroke-width: 2;
+    stroke-dasharray: 9.6 11.3;
+}
+.section-6 .globe .dotted-lines .big {
+    fill: #4D4D4D;
+    fill-rule: nonzero;
+    stroke: #4D4D4D;
+    stroke-width: 2;
+}
+.section-6 .globe .normal-lines .dark-line {
+    fill: #4D4D4D;
+    stroke: #4D4D4D;
+    stroke-width: 1;
+}
+.section-6 .globe .normal-lines .light-line {
+    fill: #868686;
+    stroke: #868686;
+    stroke-width: 1;
+}
+.section-6 .globe .normal-lines .regular-lines {
+    stroke: #868686;
+    stroke-width: 1.5;
+    opacity: 0.8;
+    fill: none;
+    fill-rule: nonzero;
+}
+.section-6 .globe .icon .outer-circle {
+    fill: #4D4D4D;
+    fill-rule: nonzero;
+    stroke: #4D4D4D;
+    stroke-width: 1;
+}
+.section-6 .globe .icon .outer-circle.light {
+    stroke-width: 0.3;
+}
+
+.section-6 .globe .community-black .icon-back,
+.section-6 .globe .community-white .people {
+    fill: #4D4D4D;
+    fill-rule: nonzero;
+}
+.section-6 .globe .community-black .people,
+.section-6 .globe .community-white .icon-back,
+.section-6 .globe .star .dots,
+.section-6 .globe .js .icon-back,
+.section-6 .globe .python .icon-back,
+.section-6 .globe .ethereum .icon-back,
+.section-6 .globe .r-language .icon-back {
+    fill: #fff;
+    fill-rule: nonzero;
+}
+.section-6 .globe .star .icon-back {
+    fill: #1d1d1d;
+    fill-rule: nonzero;
+}
+
+.section-6 .globe .python .logo-top {
+    fill: #474747;
+}
+.section-6 .globe .python .logo-bottom {
+    fill: #C2C2C2;
+}
+
+.section-6 .globe .r-language .logo-circle {
+    fill: url(#r-logo-circle)
+}
+.section-6 .globe .r-language .logo-letter {
+    fill: url(#r-logo-letter)
+}
+
+.section-6 .globe .js .logo {
+    fill: #747474;
+}
+
+.section-6 .globe .ethereum .logo-part-1 {
+    fill: #808182
+}
+.section-6 .globe .ethereum .logo-part-2 {
+    fill: #2F3030
+}
+.section-6 .globe .ethereum .logo-part-3 {
+    fill: #131313
+}
+.section-6 .globe .ethereum .logo-part-4 {
+    fill: #2F3030
+}
+.section-6 .globe .ethereum .logo-part-5 {
+    fill: #838586
+}
+.section-6 .globe .ethereum .logo-part-6 {
+    fill: #343535
+}
+
+.section-6 .globe .shadow-back {
+    fill: #333;
+    opacity: 0.5;
+}
+.section-6 .globe .shadow-front {
+    fill: #cecece;
+}
+
+
 /* Section #6 Responsive ------------------------------------*/
 
 @media (min-width: 576px) {
+    .section-6 {
+        height: 100vh;
+    }
     .section-6 .bottom-line {
         width: 540px;
     }
-    .section-6 p {
-        display: block;
+    .section-6 .container {
+        padding-top: 70px;
+        margin-top: -100vh;
     }
+    /*.section-6 p {*/
+        /*display: block;*/
+    /*}*/
     .section-6 .bottom-line h3 {
         font-size: 1.17em;
     }
+    .section-6 ul {
+        margin: 60px auto 30px 0;
+        font-weight: bold;
+    }
 }
-@media (min-width: 768px)  {
+@media (min-width: 768px) {
     .section-6 .bottom-line {
         width: 720px;
     }
@@ -921,6 +1079,9 @@ ul.navbar-nav .country-selector .dropdown-toggle img {
 @media (min-width: 992px)  {
     .section-6 .bottom-line {
         width: 960px;
+    }
+    .section-6 p {
+        font-size: 1em;
     }
 }
 @media (min-width: 1200px)  {
@@ -1452,15 +1613,22 @@ footer .footer-links a.airdrop-link {
 /******************** End of Registration modal **********/
 
 
-/******************** Video modal ************************/
+/******************** Video & image modal ****************/
 
 
-#toolVideoModal .modal-content {
+#toolVideoModal .modal-content,
+#fullImgModal .modal-content {
     background-color: #34383C;
+}
+#fullImgModal .modal-body {
+    /*width: auto;*/
+    /*height: auto;*/
+    /*max-width: 100%;*/
+    /*max-height: 100%;*/
 }
 
 
-/******************** End of Video modal ****************/
+/******************** End of Video & image modal ********/
 
 
 /******************** Robot animation *******************/
