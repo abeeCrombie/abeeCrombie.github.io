@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>nvest</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="css/nvest.css" rel="stylesheet" type="text/css">
+
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" type="text/javascript"></script>-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+  <link href="images/32-FAVI.png" rel="shortcut icon" type="image/x-icon">
+</head>
+<body class="body">
+
+<!-- Sign Up Modal -->
+<div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="toolVideoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Sign Up</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <label data-error="wrong" data-success="right">Your name</label>
+          <input type="text" class="form-control validate" placeholder="Enter your name">
+        </div>
+        <div class="md-form mb-4">
+          <label data-error="wrong" data-success="right">Your email</label>
+          <input type="email" class="form-control validate" placeholder="Enter your email">
+        </div>
+        <button class="btn btn-submit">submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-md fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html" class="brand w-nav-brand">
+      <img src="images/nvest-logo-horizonal-white1.png">
+    </a>
+
+    <div class="d-block d-md-none ml-auto btn-telegram">
+      <a href="https://t.me/nvestai" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 189.473 189.473" style="enable-background:new 0 0 189.473 189.473;" xml:space="preserve">
+          <path d="M152.531,179.476c-1.48,0-2.95-0.438-4.211-1.293l-47.641-32.316l-25.552,18.386c-2.004,1.441-4.587,1.804-6.914,0.972   c-2.324-0.834-4.089-2.759-4.719-5.146l-12.83-48.622L4.821,93.928c-2.886-1.104-4.8-3.865-4.821-6.955   c-0.021-3.09,1.855-5.877,4.727-7.02l174.312-69.36c0.791-0.336,1.628-0.53,2.472-0.582c0.302-0.018,0.605-0.018,0.906-0.001   c1.748,0.104,3.465,0.816,4.805,2.13c0.139,0.136,0.271,0.275,0.396,0.42c1.11,1.268,1.72,2.814,1.835,4.389   c0.028,0.396,0.026,0.797-0.009,1.198c-0.024,0.286-0.065,0.571-0.123,0.854L159.898,173.38c-0.473,2.48-2.161,4.556-4.493,5.523   C154.48,179.287,153.503,179.476,152.531,179.476z M104.862,130.579l42.437,28.785L170.193,39.24l-82.687,79.566l17.156,11.638   C104.731,130.487,104.797,130.533,104.862,130.579z M69.535,124.178l5.682,21.53l12.242-8.809l-16.03-10.874   C70.684,125.521,70.046,124.893,69.535,124.178z M28.136,86.782l31.478,12.035c2.255,0.862,3.957,2.758,4.573,5.092l3.992,15.129  c0.183-1.745,0.974-3.387,2.259-4.624L149.227,38.6L28.136,86.782z" />
+        </svg>
+      </a>
+    </div>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="nav-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+
+    <div class="navbar-collapse collapse">
+      <ul class="navbar-nav ml-auto mt-3 mt-md-0">
+        <li class="nav-item">
+          <a class="nav-link menu-item" href="#">Whitepaper</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link menu-item go-to-features" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link menu-item go-to-tokens" href="#">Token</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link menu-item" href="https://medium.com/@nvestai" target="_blank">Blog</a>
+        </li>
+        <li class="nav-item country-selector dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="images/usa-flag.svg">
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">
+              <img src="images/brazil.svg">
+              Brazil
+            </a>
+            <a class="dropdown-item" href="#">
+              <img src="images/china.svg">
+              China
+            </a>
+            <a class="dropdown-item" href="#">
+              <img src="images/south-korea.svg">
+              Korean
+            </a>
+            <a class="dropdown-item" href="#">
+              <img src="images/japan.svg">
+              Japan
+            </a>
+            <a class="dropdown-item" href="#">
+              <img src="images/russia.svg">
+              Russian
+            </a>
+            <a class="dropdown-item" href="#">
+              <img src="images/spain.svg">
+              Spain
+            </a>
+          </div>
+        </li>
+        <li class="nav-item signup">
+          <a href="" class="btn btn-signup menu-item" data-toggle="modal" data-target="#modalSubscriptionForm">
+            Sign Up
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="d-none d-md-block ml-auto btn-telegram">
+      <a href="https://t.me/nvestai" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 189.473 189.473" style="enable-background:new 0 0 189.473 189.473;" xml:space="preserve">
+          <path d="M152.531,179.476c-1.48,0-2.95-0.438-4.211-1.293l-47.641-32.316l-25.552,18.386c-2.004,1.441-4.587,1.804-6.914,0.972   c-2.324-0.834-4.089-2.759-4.719-5.146l-12.83-48.622L4.821,93.928c-2.886-1.104-4.8-3.865-4.821-6.955   c-0.021-3.09,1.855-5.877,4.727-7.02l174.312-69.36c0.791-0.336,1.628-0.53,2.472-0.582c0.302-0.018,0.605-0.018,0.906-0.001   c1.748,0.104,3.465,0.816,4.805,2.13c0.139,0.136,0.271,0.275,0.396,0.42c1.11,1.268,1.72,2.814,1.835,4.389   c0.028,0.396,0.026,0.797-0.009,1.198c-0.024,0.286-0.065,0.571-0.123,0.854L159.898,173.38c-0.473,2.48-2.161,4.556-4.493,5.523   C154.48,179.287,153.503,179.476,152.531,179.476z M104.862,130.579l42.437,28.785L170.193,39.24l-82.687,79.566l17.156,11.638   C104.731,130.487,104.797,130.533,104.862,130.579z M69.535,124.178l5.682,21.53l12.242-8.809l-16.03-10.874   C70.684,125.521,70.046,124.893,69.535,124.178z M28.136,86.782l31.478,12.035c2.255,0.862,3.957,2.758,4.573,5.092l3.992,15.129  c0.183-1.745,0.974-3.387,2.259-4.624L149.227,38.6L28.136,86.782z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="container pt-5 mt-5">
+  <h1 class="text-center mt-5 mb-5">Terms &amp; Conditions</h1>
+  <p class="d-block w-100 mt-5 mb-5 text-right">Last Updated: March 6, 2018</p>
+  <h4 class="mt-5">TERMS OF TOKEN GENERATION EVENT</h4>
+  <p>PLEASE READ THESE TERMS OF TOKEN GENERATION EVENT CAREFULLY. NOTE THAT SECTION 14 CONTAINS A BINDING ARBITRATION CLAUSE AND CLASS ACTION WAIVER, WHICH, IF APPLICABLE TO YOU, AFFECT YOUR LEGAL RIGHTS. IF YOU DO NOT AGREE TO THESE TERMS OF SALE, DO NOT PURCHASE TOKENS.</p>
+  <p>Your purchase of NVEST Tokens (“<strong>NVAI</strong>”) during the NVAI generation period (“<strong>Generation Period</strong>”) from Nvest International  (“<strong>Company</strong>,” “<strong>we</strong>,” or “<strong>us</strong>”) is subject to these Terms of Sale (“<strong>Terms</strong>”).  Each of you and Company is a “<strong>Party</strong>,” and together the “<strong>Parties</strong>.”</p>
+  <p> </p>
+  <p>By purchasing NVAI from us during the Generation Period and/or using NVAI in connection with the Platform (as defined below), you will be bound by these Terms and all terms incorporated by reference. If you have any questions regarding these Terms, please contact us at <a href="mailto:info@nvest.io">info@nvest.io</a>.</p>
+  <p>You and Company agree as follows</p>
+  <ol>
+    <li><strong>Purpose and Use of NVAI in Connection with the Platform</strong>
+      <p>NVAI are intended to be used to access nvest.ai’s various investing and trading online tools (the “<strong>Services or Tools</strong>”). , as facilitated through a decentralized platform that Company and its affiliates are developing (the “<strong>Platform</strong>”).  Important additional details regarding the Services and Platform are provided in <strong>Exhibit A</strong>.</p>
+      <p>Ownership of NVAI carries no rights, express or implied, other than the right to use NVAI as a means to obtain Services, and to enable usage of and interaction with the Platform, if successfully completed and deployed. In particular, you understand and accept that NVAI do not represent or confer any ownership right or stake, share or security or equivalent rights, or any right to receive future revenue shares, intellectual property rights or any other form of participation in or relating to the Platform, and/or Company and its corporate affiliates, other than rights relating to the receipt of Services and use of the Platform, subject to limitations and conditions in these Terms and applicable Platform Terms and Policies (as defined below).</p>
+    </li>
+    <li><strong>Scope of Terms</strong>
+      <p>Unless otherwise stated herein, these Terms govern only your purchase of NVAI from us during the <strong>Generation Period</strong>.</p>
+      <p>The use of NVAI in connection with the Services or Platform may be governed by other applicable terms and policies (collectively, the “<strong>Platform Terms and Policies</strong>”).  Any Platform Terms and Policies we promulgate will be available at <a href="http://www.nvest.ai">www.nvest.ai</a>. We may add terms or policies to the Platform Terms and Policies in our sole discretion, and may update each of the Platform Terms and Policies from time to time according to modification procedures set forth therein.  To the extent of any conflict with these Terms, the Platform Terms and Policies shall control with respect to any issues relating to the use of NVAI in connection with the Services or Platform.</p>
+    </li>
+    <li><strong>Cancellation; Refusal of Purchase Requests</strong>
+      <p>Your purchase of NVAI from us during the Generation Period is final, and there are no refunds or cancellations except (a) if the Activation Threshold is not reached, pursuant to applicable procedures set forth in <strong>Exhibit B</strong> or (b) as may be required by applicable law or regulation.  We reserve the right to refuse or cancel NVAI purchase requests at any time in our sole discretion.</p>
+    </li>
+    <li><strong>NVAI Sale Procedures and Specifications</strong>
+      <p>Important information about the procedures and material specifications of our NVAI generation is provided in <strong>Exhibit B</strong>, including, but not limited to, details regarding the timing and pricing of the NVAI sale, the amount of NVAI we will sell, and our anticipated use of the NVAI sale proceeds. By purchasing NVAI, you acknowledge that you understand and have no objection to these procedures and material specifications.</p>
+    </li>
+  </ol>
+  <h4 class="mt-5">Acknowledgment and Assumption of Risks</strong></h4>
+  <p>You acknowledge and agree that there are risks associated with purchasing NVAI, holding NVAI, and using NVAI in connection with the Services and Platform, as disclosed and explained in <strong>Exhibit C</strong>. If you have any questions regarding these risks, please contact us at info@nvest.ai.  BY PURCHASING NVAI, YOU EXPRESSLY ACKNOWLEDGE AND ASSUME THESE RISKS.</p>
+  <ol>
+    <li><strong>Security</strong>
+      <p>You are responsible for implementing reasonable measures for securing the wallet, vault or other storage mechanism you use to receive and hold NVAI you purchase from us, including any requisite private key(s) or other credentials necessary to access such storage mechanism(s).  If your private key(s) or other access credentials are lost, you may lose access to your NVAI.  We are not responsible for any such losses.</p>
+    <li><strong>Personal Information</strong>
+      <p>We may determine, in our sole discretion, that it is necessary to obtain certain information about you in order to comply with applicable law or regulation in connection with selling NVAI to you. You agree to provide us such information promptly upon request, and you acknowledge that we may refuse to sell NVAI to you until you provide such requested information and we have determined that it is permissible to sell you NVAI under applicable law or regulation.</p>
+    </li>
+    <li><strong>Taxes</strong>
+      <p>The purchase price that you pay for NVAI is exclusive of all applicable taxes.  You are responsible for determining what, if any, taxes apply to your purchase of NVAI, including, for example, sales, use, value added, and similar taxes. It is also your responsibility to withhold, collect, report and remit the correct taxes to the appropriate tax authorities. We are not responsible for withholding, collecting, reporting, or remitting any sales, use, value added, or similar tax arising from your purchase of NVAI.</p>
+    </li>
+    <li><strong>Representations and Warranties</strong>
+      <p>By transferring Ether to the smart contract system (“<strong>Smart Contract System</strong>”, as explained in <strong>Exhibit B</strong>) to purchase NVAI from us, you represent and warrant that:</p>
+      <ul>
+        <li>You have read and understand these Terms (including all Exhibits);</li>
+        <li>You have a sufficient understanding of the functionality, usage, storage, transmission mechanisms and other material characteristics of cryptographic tokens like Bitcoin and Ether, token storage mechanisms (such as token wallets), blockchain technology and blockchain-based software systems to understand these Terms and to appreciate the risks and implications of purchasing NVAI;</li>
+        <li>You have carefully reviewed the code of the Smart Contract System located on the Ethereum blockchain at the addresses set forth in <strong>Exhibit B</strong> and fully understand and accept the functions implemented therein;</li>
+        <li>You have obtained sufficient information about NVAI to make an informed decision to purchase NVAI;</li>
+        <li>You understand the restrictions and risks associated with the creation of NVAI by the Smart Contract System as set forth herein, and acknowledge and assume all such risks;</li>
+        <li>You understand, acknowledge and assume the risks associated with the purchase, holding and use of NVAI in connection with the Services and Platform, as explained and disclosed in Section 5 and <strong>Exhibit C</strong>;</li>
+        <li>You understand that NVAI confer the right to receive Services, to access the Platform, and in cases only when you hold enough tokens to be considered a Master Holds confer any voting rights. You understand that tokens confer no other rights of any form with respect to the Platform or Company or its corporate affiliates, including, but not limited to, liquidation, proprietary (including all forms of intellectual property), or other financial or legal rights;</li>
+        <li>You are purchasing NVAI solely for the purpose of receiving Services, accessing the Platform, and supporting the development, testing, deployment and operation of the Platform, being aware of the commercial risks associated with the Company and the Platform. You are not purchasing NVAI for any other purposes, including, but not limited to, any investment, speculative or other financial purposes;</li>
+        <li>Your purchase of NVAI complies with applicable law and regulation in your jurisdiction, including, but not limited to, (i) legal capacity and any other applicable legal requirements in your jurisdiction for purchasing NVAI, using NVAI, and entering into contracts with us, (ii) any foreign exchange or regulatory restrictions applicable to such purchase, and (iii) any governmental or other consents that may need to be obtained;</li>
+        <li>You will comply with any applicable tax obligations in your jurisdiction arising from your purchase of NVAI;</li>
+        <li>If you are purchasing NVAI on behalf of any entity, you are authorized to accept these Terms on such entity’s behalf and that such entity will be responsible for breach of these Terms by you or any other employee or agent of such entity (references to “you” in these Terms refer to you and such entity, jointly);</li>
+        <li>You are not resident or domiciled in New York State or purchasing NVAI from a location in New York State;\</li>
+        <li>You are not (i) a citizen or resident of a geographic area in which access to or use of the Services is prohibited by applicable law, decree, regulation, treaty, or administrative act, (ii) a citizen or resident of, or located in, a geographic area that is subject to U.S. or other sovereign country sanctions or embargoes, or (iii) an individual, or an individual employed by or associated with an entity, identified on the U.S. Department of Commerce’s Denied Persons or Entity List, the U.S. Department of Treasury’s Specially Designated Nationals or Blocked Persons Lists, or the U.S. Department of State’s Debarred Parties List. You agree that if your country of residence or other circumstances change such that the above representations are no longer accurate, that you will immediately cease using the Services.  If you are registering to use the Services on behalf of a legal entity, you further represent and warrant that (i) such legal entity is duly organized and validly existing under the applicable laws of the jurisdiction of its organization, and (ii) you are duly authorized by such legal entity to act on its behalf; and</li>
+        <li>You understand and acknowledge that title to, and risk of loss of, NVAI you purchase from Company and receive from the Smart Contract System passes from Company to you in the<strong> Bermuda</strong>.</li>
+      </ul>
+    <li><strong>Indemnification</strong>
+      <ul>
+        <li>To the fullest extent permitted by applicable law, you will indemnify, defend and hold harmless Company and our respective past, present and future employees, officers, directors, contractors, consultants, equity holders, suppliers, vendors, service providers, parent companies, subsidiaries, affiliates, agents, representatives, predecessors, successors and assigns (the “<strong>Company Parties</strong>”) from and against all claims, demands, actions, damages, losses, costs and expenses (including attorneys’ fees) that arise from or relate to: (i) your purchase or use of NVAI, (ii) your responsibilities or obligations under these Terms, (iii) your violation of these Terms, or (iv) your violation of any rights of any other person or entity.</li>
+        <li>Company reserves the right to exercise sole control over the defense, at your expense, of any claim subject to indemnification under Section 10(a).  This indemnity is in addition to, and not in lieu of, any other indemnities set forth in a written agreement between you and Company.</li>
+      </ul>
+  </li>
+    <li><strong>Disclaimers</strong>
+      <p>TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW AND EXCEPT AS OTHERWISE SPECIFIED IN A WRITING BY US, (A) NVAI ARE SOLD ON AN “AS IS” AND “AS AVAILABLE” BASIS WITHOUT WARRANTIES OF ANY KIND, AND WE EXPRESSLY DISCLAIM ALL IMPLIED WARRANTIES AS TO NVAI, INCLUDING, WITHOUT LIMITATION, IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT; (B) WE DO NOT REPRESENT OR WARRANT THAT NVAI ARE RELIABLE, CURRENT OR ERROR-FREE, MEET YOUR REQUIREMENTS, OR THAT DEFECTS IN NVAI WILL BE CORRECTED; AND (C) WE CANNOT AND DO NOT REPRESENT OR WARRANT THAT NVAI OR THE DELIVERY MECHANISM FOR NVAI ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.</p>
+      <p>Some jurisdictions do not allow the exclusion of certain warranties or disclaimer of implied terms in contracts with consumers, so some or all of the exclusions of warranties and disclaimers in this section may not apply to you.</p>
+    </li>
+    <li><strong>Limitation of Liability</strong>
+      <p>(A) TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW: (I) IN NO EVENT WILL COMPANY OR ANY OF THE COMPANY PARTIES BE LIABLE FOR ANY INDIRECT, SPECIAL, INCIDENTAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES OF ANY KIND (INCLUDING, BUT NOT LIMITED TO, WHERE RELATED TO LOSS OF REVENUE, INCOME OR PROFITS, LOSS OF USE OR DATA, OR DAMAGES FOR BUSINESS INTERRUPTION) ARISING OUT OF OR IN ANY WAY RELATED TO THE SALE OR USE OF NVAI OR OTHERWISE RELATED TO THESE TERMS, REGARDLESS OF THE FORM OF ACTION, WHETHER BASED IN CONTRACT, TORT (INCLUDING, BUT NOT LIMITED TO, SIMPLE NEGLIGENCE, WHETHER ACTIVE, PASSIVE OR IMPUTED), OR ANY OTHER LEGAL OR EQUITABLE THEORY (EVEN IF THE PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND REGARDLESS OF WHETHER SUCH DAMAGES WERE FORESEEABLE); AND (II) IN NO EVENT WILL THE AGGREGATE LIABILITY OF COMPANY AND THE COMPANY PARTIES (JOINTLY), WHETHER IN CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE, WHETHER ACTIVE, PASSIVE OR IMPUTED), OR OTHER THEORY, ARISING OUT OF OR RELATING TO THESE TERMS OR THE USE OF OR INABILITY TO USE NVAI, EXCEED THE AMOUNT YOU PAY TO US FOR NVAI.</p>
+      <p>(B) THE LIMITATIONS SET FORTH IN SECTION 12(A) WILL NOT LIMIT OR EXCLUDE LIABILITY FOR THE GROSS NEGLIGENCE, FRAUD OR INTENTIONAL, WILLFUL OR RECKLESS MISCONDUCT OF COMPANY.</p>
+      <p>(C) Some jurisdictions do not allow the limitation or exclusion of liability for incidental or consequential damages.  Accordingly, some of the limitations of this section may not apply to you.</p>
+    </li>
+    <li><strong>Release</strong>
+      <p>To the fullest extent permitted by applicable law, you release Company and the other Company Parties from responsibility, liability, claims, demands and/or damages (actual and consequential) of every kind and nature, known and unknown (including, but not limited to, claims of negligence), arising out of or related to disputes between users and the acts or omissions of third parties.<strong>  </strong></p>
+    </li>
+  </ol>
+  <h4>Dispute Resolution; Arbitration</h4>
+      <p>PLEASE READ THE FOLLOWING SECTION CAREFULLY BECAUSE IT CONTAINS CERTAIN PROVISIONS, SUCH AS A BINDING ARBITRATION CLAUSE AND CLASS ACTION WAIVER, WHICH AFFECT YOUR LEGAL RIGHTS. THIS SECTION REQUIRES YOU TO ARBITRATE CERTAIN DISPUTES AND CLAIMS WITH THE COMPANY AND LIMITS THE MANNER IN WHICH YOU CAN SEEK RELIEF FROM US.</p>
+      <p>Binding Arbitration. Except for any disputes, claims, suits, actions, causes of action, demands or proceedings (collectively, “Disputes”) in which either Party seeks injunctive or other equitable relief for the alleged unlawful use of intellectual property, including, without limitation, copyrights, trademarks, trade names, logos, trade secrets or patents, you and nvest (i) waive your and nvest’s respective rights to have any and all Disputes arising from or related to these Terms resolved in a court, and (ii) waive your and nvest’s respective rights to a jury trial. Instead, you and nvest will arbitrate Disputes through binding arbitration (which is the referral of a Dispute to one or more persons charged with reviewing the Dispute and making a final and binding determination to resolve it instead of having the Dispute decided by a judge or jury in court).</p>
+      <p>No Class Arbitrations, Class Actions or Representative Actions. Any Dispute arising out of or related to these Terms is personal to you and the company and will be resolved solely through individual arbitration and will not be brought as a class arbitration, class action or any other type of representative proceeding. There will be no class arbitration or arbitration in which an individual attempts to resolve a Dispute as a representative of another individual or group of individuals. Further, a Dispute cannot be brought as a class or other type of representative action, whether within or outside of arbitration, or on behalf of any other individual or group of individuals.</p>
+      <p>Arbitration Rules. The enforceability of this Section 14 will be both substantively and procedurally governed by and construed and enforced in accordance with the International Chamber of Commerce Rules of Arbitration, to the maximum extent permitted by applicable law.</p>
+      <p>Notice; Informal Dispute Resolution. Each Party will notify the other Party in writing of any Dispute within thirty (30) days of the date it arises, so that the Parties can attempt in good faith to resolve the Dispute informally. Notice to nvest shall be sent by e-mail to nvest at info@nvest.io. Notice to you shall be either posted on our website or, if available, will be sent by email to any email address you provided in connection with your purchase of NVAITOKENS or use of the Network or Services. Your notice must include (i) your name, postal address, email address and telephone number, (ii) a description in reasonable detail of the nature or basis of the Dispute, and (iii) the specific relief that you are seeking. If you and nvest cannot agree how to resolve the Dispute within thirty (30) days after the date the notice is received by the applicable Party, then either you or nvest may, as appropriate and in accordance with this Section 14, commence an arbitration proceeding or, to the extent specifically provided for in Section 14.1, file a claim in court.</p>
+      <p>Process. The arbitration will be conducted confidentially by a single arbitrator agreed to by both parties in accordance with the rules of the International Chamber of Commerce Rules of Arbitration, which are hereby incorporated by reference.</p>
+      <p>Authority of Arbitrator. These Terms, the applicable International Chamber of Commerce Rules of Arbitration and the arbitrator will have (i) the exclusive authority and jurisdiction to make all procedural and substantive decisions regarding a Dispute, including the determination of whether a Dispute is arbitrable, and (ii) the authority to grant any remedy that would otherwise be available in court, provided, however, that the arbitrator does not have the authority to conduct a class arbitration or a representative or class action, which is prohibited by these Terms. The arbitrator may only conduct an individual arbitration and may not consolidate more than one individual’s claims, preside over any type of class or representative proceeding or preside over any proceeding involving more than one individual.</p>
+      <p>Arbitration Rules. The International Chamber of Commerce Rules of Arbitration and additional information about International Chamber of Commerce are available at https://iccwbo.org/dispute-resolution-services/arbitration/rules-of-arbitration/. By agreeing to be bound by these Terms, you either (i) acknowledge and agree that you have read and understand the International Chamber of Commerce Rules of Arbitration, or (ii) waive your opportunity to read the International Chamber of Commerce Rules of Arbitration and any claim that the International Chamber of Commerce Rules of Arbitration are unfair or should not apply for any reason.</p>
+      <p>Severability of Dispute Resolution and Arbitration Provisions. If any term, clause or provision of this Section 14 is held invalid or unenforceable, it will be so held to the minimum extent applicable and required by law, and all other terms, clauses and provisions of this Section 14 will remain valid and enforceable. Further, the waivers set forth in Section 14.2 above are severable from the other provisions of these Terms and will remain valid and enforceable, except as prohibited by applicable law.</p>
+    </li>
+    <li><strong>Governing Law and Venue</strong>
+      <p>These Terms will be governed by and construed and enforced in accordance with the laws of the <strong>Bermuda</strong>, without regard to conflict of law rules that would cause the application of the laws of any other jurisdiction.  Any Dispute between the Parties arising out or relating to these Terms or its subject matter or formation (including non-contractual Disputes of claims) that is not subject to arbitration will be resolved in the courts of the <strong>Bermuda</strong>.</p>
+      <ol>
+        <li><strong>Severability</strong></li>
+      </ol>
+      <p>If any term, clause or provision of these Terms is held unlawful, void or unenforceable, then that term, clause or provision will be severable from these Terms and will not affect the validity or enforceability of any remaining part of that term, clause or provision, or any other term, clause or provision of these Terms.</p>
+      <ol>
+        <li><strong>Miscellaneous</strong></li>
+      </ol>
+      <p>These Terms constitute the entire agreement between you and us relating to your purchase of NVAI from us. We may make changes to these Terms from time to time as reasonably required to comply with applicable law or regulation. If we make changes, we will post the amended Terms at www.<a href="https://basicattentiontoken.org/">nvest.ai</a> and update the “Last Updated” date above. We may also attempt to notify you through the NVAI website at www.<a href="https://basicattentiontoken.org/">nvest.ai</a>. The amended Terms will be effective immediately. We may assign our rights and obligations under these Terms. Our failure to exercise or enforce any right or provision of these Terms will not operate as a waiver of such right or provision.  We will not be liable for any delay or failure to perform any obligation under these Terms where the delay or failure results from any cause beyond our reasonable control. Purchasing NVAI from us does not create any form of partnership, joint venture or any other similar relationship between you and us. Except as otherwise provided in herein, these Terms are intended solely for the benefit of you and us and are not intended to confer third-party beneficiary rights upon any other person or entity. You agree and acknowledge that all agreements, notices, disclosures, and other communications that we provide to you, including these Terms, will be provided in electronic form.</p>
+      <p>*       *       *       *       *</p>
+      <p><strong>Exhibit A</strong></p>
+      <p><strong>Description of Company, Platform, and NVAI</strong></p>
+      <ol>
+        <li><em><strong>Overview of Company and Affiliates</strong></em></li>
+      </ol>
+      <p>The Company is an exempted company with limited liability incorporated in the <strong>Bermuda and is not subject to supervision or regulation by the Bermuda Monetary Authority. </strong>Company will have primary responsibility of generating nvest tokens and will not be resposible for any platform development. </p>
+      <p> </p>
+      <p>A Miami based Limiited Liability Corporation ("Miami Co") will be contracted to develop the company’s software platform. </p>
+      <p> </p>
+      <p><em><strong>Overview of Current Platform</strong></em></p>
+      <p>Currently, the Platform consists of a suite of tools running on nvest.io and proprietary source code. After the generation period, and if the sale was successful, Miami Co will begin product development </p>
+      <p> </p>
+      <p>Further details regarding the Platform are described in the Nvest,ai Whitepaper (“<strong>Whitepaper</strong>”), which is available at: www.<a href="https://nvest.ai">nvest.ai</a>. The information contained in the Whitepaper and Nvest’s website are of descriptive nature only, and do not, unless explicitly incorporated herein, form part of the Terms.</p>
+      <p> </p>
+      <p>Although Company intends to develop the Platform in the manner generally described above, it reserves the right to modify features, functionalities or development plans in its sole and absolute discretion.</p>
+      <p><strong>Exhibit B</strong></p>
+      <p><strong>Token generation Event Procedures and Specifications</strong></p>
+      <ol>
+        <li><em><strong>Total Number of NVAI to be Created and Sold</strong></em></li>
+      </ol>
+      <p>Company will create up to 2.5 billion NVAI through the Smart Contract System.</p>
+      <p> </p>
+      <p><em><strong>Commencement and Duration of Token Sale</strong></em></p>
+      <p>The Company’s sale of NVAI will (a) begin at or about 8:00 am PDT on June 31, 2018.  For the avoidance of doubt, these estimates are provided for informational purposes only, and the Generation Period will commence and conclude strictly according to its definition above.</p>
+      <p> </p>
+      <p>If less than an equilivent of $6 million Ether have been received by Company during the Generation Period (the “<strong>Activation Threshold</strong>”), each purchaser will have the possibility to initiate the transfer of the respective amount of Ether submitted to the Smart Contract System from the Smart Contract System’s address back to the address used by that purchaser to transfer Ether to the Smart Contract System. </p>
+      <p><em><strong>NVAI Price</strong></em></p>
+      <p>Using a hypothetical ETH/USD price of $1,000<strong> 1 Ether will purchase 50,000 NVAI</strong>. The exact exchange rate into NVAI token will be updated daily</p>
+      <p> </p>
+      <p><em><strong>Procedures for Buying and Receiving NVAI</strong></em></p>
+      <p>In order to purchase NVAI during the Generation Period, and to receive the NVAI you purchase, you must have an Ethereum wallet that supports the ERC20 token standard.  Company reserves the right to prescribe additional wallet requirements.</p>
+      <p>Approximately forty-eight (48) hours prior to the commencement of the Generation Period, Company will publish an address for the NVAI sale via www.nvest.ai. To initiate a purchase of NVAI during the Generation Period, you must send an amount of Ether to an Ethereum address (the “NVAI token Address”) that will be provided to you only after you agree to these Terms by clicking the “I Agree with the Terms – View the NVAIoken Address” button at the bottom of these Terms.  Sending Ether to the NVAIoken Address during the Generation Period triggers a smart contract operation, pursuant to which the Smart Contract System will automatically create and promptly deliver the corresponding NVAI to the ERC20 wallet address from which the Ether were sent.</p>
+      <p>Ether must be sent to the NVAIoken Address during the Generation Period in order to purchase and receive NVAI.  Sending Ether to any other address may result in loss of Ether.  Attempted transactions to purchase NVAI will be rejected if Ether is sent to the NVAI token Address at any time before or after the Generation Period.</p>
+      <p>The Smart Contract System is deployed by Company from the <strong>Bermuda</strong>, and is programmed so that all transactions it executes will be executed in the <strong>Bermuda</strong>. As such, title to, and risk of loss of, NVAI created and delivered by the Smart Contract System passes from Company to purchasers in the <strong>Bermuda</strong>.</p>
+      <ol>
+        <li><em><strong>Use of Proceeds from NVAI Token Sale</strong></em></li>
+      </ol>
+      <p>The Ether that Company receives for NVAI sold to purchasers during the Generation Period, a portion of which will be converted to US dollars will be used to create the nvest platform. The company will employ SA181980 to develop the platform, who will hire software engineers, marketing and legal staff. The company will not have any employees or produce any product other than the nvest token. </p>
+      <p><strong>Exhibit C</strong></p>
+      <p><strong>Certain Risks Relating to Purchase, Sale and Use of NVAI</strong></p>
+      <p><em><strong>Important Note:  </strong></em><em>As noted elsewhere in these Terms, the NVAI are </em><em>not</em><em> being structured or sold as securities or any other form of investment product.  Accordingly, none of the information presented in this </em><em><strong>Exhibit C</strong></em><em> is intended to form the basis for any investment decision, and no specific recommendations are intended. Company expressly disclaims any and all responsibility for any direct or consequential loss or damage of any kind whatsoever arising directly or indirectly from: (i) reliance on any information contained in this </em><em><strong>Exhibit C</strong></em><em>, (ii) any error, omission or inaccuracy in any such information or (iii) any action resulting from such information.</em></p>
+      <p><strong>By purchasing, holding and using NVAI, you expressly acknowledge and assume the following risks:</strong></p>
+      <ol>
+        <li><em><strong>Risk of Losing Access to NVAI Due to Loss of Private Key(s), Custodial Error or Purchaser Error</strong></em></li>
+      </ol>
+      <p>A private key, or a combination of private keys, is necessary to control and dispose of NVAI stored in your digital wallet or vault.  Accordingly, loss of requisite private key(s) associated with your digital wallet or vault storing NVAI will result in loss of such NVAI.  Moreover, any third party that gains access to such private key(s), including by gaining access to login credentials of a digital wallet or vault service you use, may be able to misappropriate your NVAI.  Any errors or malfunctions caused by or otherwise related to the digital wallet or vault you choose to receive and store NVAI, including your own failure to properly maintain or use such digital wallet or vault, may also result in the loss of your NVAI.  Additionally, your failure to follow precisely the procedures set forth in Section 4 of <strong>Exhibit B</strong> for buying and receiving NVAI, including, for instance, if you provide the wrong address for receiving NVAI, may result in the loss of your NVAI.</p>
+      <ol>
+        <li><em><strong>Risks Associated with the Ethereum Protocol</strong></em></li>
+      </ol>
+      <p>Because NVAI and the Platform are based on the Ethereum protocol, any malfunction, breakdown or abandonment of the Ethereum protocol may have a material adverse effect on the Platform or NVAI.  Moreover, advances in cryptography, or technical advances such as the development of quantum computing, could present risks to NVAI and the Platform, including the utility of NVAI for obtaining Services, by rendering ineffective the cryptographic consensus mechanism that underpins the Ethereum protocol.</p>
+      <ol>
+        <li><em><strong>Risk of Mining Attacks</strong></em></li>
+      </ol>
+      <p>As with other decentralized cryptographic tokens based on the Ethereum protocol, NVAI are susceptible to attacks by miners in the course of validating NVAI transactions on the Ethereum blockchain, including, but not limited, to double-spend attacks, majority mining power attacks, and selfish-mining attacks. Any successful attacks present a risk to the Platform and NVAI, including, but not limited to, accurate execution and recording of transactions involving NVAI.</p>
+      <ol>
+        <li><em><strong>Risk of Hacking and Security Weaknesses</strong></em></li>
+      </ol>
+      <p>Hackers or other malicious groups or organizations may attempt to interfere with the Platform or NVAI in a variety of ways, including, but not limited to, malware attacks, denial of service attacks, consensus-based attacks, Sybil attacks, smurfing and spoofing.  Furthermore, because the Platform is based on open-source software, there is a risk that a third party or a member of the Company team may intentionally or unintentionally introduce weaknesses into the core infrastructure of the Platform, which could negatively affect the Platform and NVAI, including NVAI’s utility for obtaining Services.</p>
+      <ol>
+        <li><em><strong>Risks Associated with Markets for NVAI</strong></em></li>
+      </ol>
+      <p>NVAI are intended to be used solely on the Platform, and Company will not support or otherwise facilitate any secondary trading or external valuation of NVAI.  This restricts the contemplated avenues for using NVAI to obtain Services or access the Platform, and could therefore create illiquidity risk with respect to NVAI you hold.  Even if secondary trading of NVAI is facilitated by third party exchanges, such exchanges may be relatively new and subject to little or no regulatory oversight, making them more susceptible to market-related risks.  Furthermore, to the extent that third-parties do ascribe an external exchange value to NVAI (e.g., as denominated in a digital or fiat currency), such value may be extremely volatile and diminish to zero.</p>
+      <ol>
+        <li><em><strong>Risk of Uninsured Losses</strong></em></li>
+      </ol>
+      <p>Unlike bank accounts or accounts at some other financial institutions, NVAI are uninsured unless you specifically obtain private insurance to insure them.  Thus, in the event of loss or loss of utility value, there is no public insurer, such as the Federal Deposit Insurance Corporation, or private insurance arranged by us, to offer recourse to you.</p>
+      <ol>
+        <li><em><strong>Risks Associated with Uncertain Regulations and Enforcement Actions</strong></em></li>
+      </ol>
+      <p>The regulatory status of NVAI and distributed ledger technology is unclear or unsettled in many jurisdictions.  It is difficult to predict how or whether regulatory agencies may apply existing regulation with respect to such technology and its applications.  It is likewise difficult to predict how or whether legislatures or regulatory agencies may implement changes to law and regulation affecting distributed ledger technology and its applications, including the Platform and NVAI. Regulatory actions could negatively impact the Platform and NVAI in various ways, including, for purposes of illustration only, through a determination that NVAI are a regulated financial instrument that require registration or licensing.  Company may cease operations in a jurisdiction in the event that regulatory actions, or changes to law or regulation, make it illegal to operate in such jurisdiction, or commercially undesirable to obtain the necessary regulatory approval(s) to operate in such jurisdiction.</p>
+      <ol>
+        <li><em><strong>Risks Arising from Taxation</strong></em></li>
+      </ol>
+      <p>The tax characterization of NVAI is uncertain.  You must seek your own tax advice in connection with purchasing NVAI, which may result in adverse tax consequences to you, including withholding taxes, income taxes and tax reporting requirements.</p>
+      <ol>
+        <li><em><strong>Risk of Alternative Platforms</strong></em></li>
+      </ol>
+      <p>It is possible that alternative platforms could be established that utilize the same open source code and protocol underlying the Platform and attempt to facilitate services that are materially similar to the Services. The Platform may compete with these alternative platforms, which could negatively impact the Platform and NVAI, including NVAI’s utility for obtaining Services.</p>
+      <ol>
+        <li><em><strong>Risk of Insufficient Interest in the Platform or Distributed Applications</strong></em></li>
+      </ol>
+      <p>It is possible that the Platform will not be used by a large number of individuals, companies and other entities or that there will be limited public interest in the creation and development of distributed platforms (such as the Platform) more generally. Such a lack of use or interest could negatively impact the development of the Platform and the potential utility of NVAI, including its utility for obtaining Services.</p>
+      <ol>
+        <li><em><strong>Risks Associated with the Development and Maintenance of the Platform</strong></em></li>
+      </ol>
+      <p>The Platform is under development and may undergo significant changes over time. Although we intend for NVAI and the Platform to follow the specifications set forth in <strong>Exhibit A</strong>, and will take commercially reasonable steps toward those ends, we may have to make changes to the specifications of NVAI or the Platform for any number of legitimate reasons.  This could create the risk that NVAI or the Platform, as further developed and maintained, may not meet your expectations at the time of purchasing NVAI.  Furthermore, despite our good faith efforts to develop and maintain the Platform, it is still possible that the Platform will experience malfunctions or otherwise fail to be adequately developed or maintained, which may negatively impact the Platform and the potential utility of NVAI, including its utility for obtaining Services.</p>
+      <ol>
+        <li><em><strong>Risk of an Unfavorable Fluctuation of Ether and Other Currency Value</strong></em></li>
+      </ol>
+      <p>The Company team intends to use the proceeds from selling NVAI to fund the maintenance and development of the Platform, as described further in Section 6 of <strong>Exhibit B</strong>. The proceeds of the sale of NVAI will be denominated in Ether, and may, at our discretion, be converted into other cryptographic and fiat currencies. If the value of Ether or other currencies fluctuates unfavorably during or after the Generation Period, the Company team may not be able to fund development, or may not be able to develop or maintain the Platform in the manner that it intended.</p>
+      <ol>
+        <li><em><strong>Risk of Dissolution of the Company</strong></em></li>
+      </ol>
+      <p>It is possible that, due to any number of reasons, including, but not limited to, an unfavorable fluctuation in the value of Ether (or other cryptographic and fiat currencies), decrease in NVAI’s utility (including its utility for obtaining Services), the failure of commercial relationships, or intellectual property ownership challenges, the Platform may no longer be viable to operate and the Company may dissolve.</p>
+      <ol>
+        <li><em><strong>Unanticipated Risks</strong></em></li>
+      </ol>
+      <p>Cryptographic tokens such as NVAI are a new and untested technology. In addition to the risks included in this <strong>Exhibit C</strong>, there are other risks associated with your purchase, holding and use of NVAI, including those that the Company cannot anticipate. Such risks may further materialize as unanticipated variations or combinations of the risks discussed in this <strong>Exhibit C</strong>.</p>
+      <p> </p>
+</div>
+
+
+<!--Footer-->
+<footer class="pt-3">
+  <div class="container">
+    <div class="row text-left text-md-center">
+      <div class="col-sm-8 col-md-3 col-lg-4">
+        <div>
+          Get in touch
+        </div>
+        <div>
+          <div class="icon">
+            <a href="mailto: avi@nvest.io">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z"/>
+              </svg>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="https://t.me/nvestai" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 189.473 189.473" style="enable-background:new 0 0 189.473 189.473;" xml:space="preserve">
+                                <path d="M152.531,179.476c-1.48,0-2.95-0.438-4.211-1.293l-47.641-32.316l-25.552,18.386c-2.004,1.441-4.587,1.804-6.914,0.972   c-2.324-0.834-4.089-2.759-4.719-5.146l-12.83-48.622L4.821,93.928c-2.886-1.104-4.8-3.865-4.821-6.955   c-0.021-3.09,1.855-5.877,4.727-7.02l174.312-69.36c0.791-0.336,1.628-0.53,2.472-0.582c0.302-0.018,0.605-0.018,0.906-0.001   c1.748,0.104,3.465,0.816,4.805,2.13c0.139,0.136,0.271,0.275,0.396,0.42c1.11,1.268,1.72,2.814,1.835,4.389   c0.028,0.396,0.026,0.797-0.009,1.198c-0.024,0.286-0.065,0.571-0.123,0.854L159.898,173.38c-0.473,2.48-2.161,4.556-4.493,5.523   C154.48,179.287,153.503,179.476,152.531,179.476z M104.862,130.579l42.437,28.785L170.193,39.24l-82.687,79.566l17.156,11.638   C104.731,130.487,104.797,130.533,104.862,130.579z M69.535,124.178l5.682,21.53l12.242-8.809l-16.03-10.874   C70.684,125.521,70.046,124.893,69.535,124.178z M28.136,86.782l31.478,12.035c2.255,0.862,3.957,2.758,4.573,5.092l3.992,15.129  c0.183-1.745,0.974-3.387,2.259-4.624L149.227,38.6L28.136,86.782z" />
+                            </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-8 col-md-6 col-lg-4">
+        <div>
+          Follow us
+        </div>
+        <div>
+          <div class="icon">
+            <a href="https://www.facebook.com/nvestai/" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"/>
+              </svg>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="https://twitter.com/nvest_dot_ai" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
+              </svg>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="https://github.com/nvestai" target="_blank">
+              <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                <path d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5q0 251-146.5 451.5t-378.5 277.5q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-85-13.5q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103zm-477 1103q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zm31 34q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zm30 45q9-7 0-19-8-13-17-6-9 5 0 18t17 7zm42 42q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zm57 25q3-11-13-16-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zm58-10q-2-11-18-9-16 3-14 15t18 8 14-14z"/>
+              </svg>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="https://www.reddit.com/"" target="_blank">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path d="M201.5 305.5c-13.8 0-24.9-11.1-24.9-24.6 0-13.8 11.1-24.9 24.9-24.9 13.6 0 24.6 11.1 24.6 24.9 0 13.6-11.1 24.6-24.6 24.6zM504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-132.3-41.2c-9.4 0-17.7 3.9-23.8 10-22.4-15.5-52.6-25.5-86.1-26.6l17.4-78.3 55.4 12.5c0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.3 24.9-24.9s-11.1-24.9-24.9-24.9c-9.7 0-18 5.8-22.1 13.8l-61.2-13.6c-3-.8-6.1 1.4-6.9 4.4l-19.1 86.4c-33.2 1.4-63.1 11.3-85.5 26.8-6.1-6.4-14.7-10.2-24.1-10.2-34.9 0-46.3 46.9-14.4 62.8-1.1 5-1.7 10.2-1.7 15.5 0 52.6 59.2 95.2 132 95.2 73.1 0 132.3-42.6 132.3-95.2 0-5.3-.6-10.8-1.9-15.8 31.3-16 19.8-62.5-14.9-62.5zM302.8 331c-18.2 18.2-76.1 17.9-93.6 0-2.2-2.2-6.1-2.2-8.3 0-2.5 2.5-2.5 6.4 0 8.6 22.8 22.8 87.3 22.8 110.2 0 2.5-2.2 2.5-6.1 0-8.6-2.2-2.2-6.1-2.2-8.3 0zm7.7-75c-13.6 0-24.6 11.1-24.6 24.9 0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.1 24.9-24.6 0-13.8-11-24.9-24.9-24.9z"/>
+            </svg>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="https://medium.com/@nvestai" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path d="M0 32v448h448V32H0zm372.2 106.1l-24 23c-2.1 1.6-3.1 4.2-2.7 6.7v169.3c-.4 2.6.6 5.2 2.7 6.7l23.5 23v5.1h-118V367l24.3-23.6c2.4-2.4 2.4-3.1 2.4-6.7V199.8l-67.6 171.6h-9.1L125 199.8v115c-.7 4.8 1 9.7 4.4 13.2l31.6 38.3v5.1H71.2v-5.1l31.6-38.3c3.4-3.5 4.9-8.4 4.1-13.2v-133c.4-3.7-1-7.3-3.8-9.8L75 138.1V133h87.3l67.4 148L289 133.1h83.2v5z"/>
+              </svg>
+            </a>
+          </div>
+          <div class="icon">
+            <a href="https://www.youtube.com/channel/UC2gCI-ExBvwus4ZxNGNlCNQ" target="_blank">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-3 col-lg-4">
+        <a href="" class="btn btn-signup" data-toggle="modal" data-target="#modalSubscriptionForm">
+          Sign Up
+        </a>
+      </div>
+    </div>
+    <div class="row footer-links text-center">
+      <div class="col-4 col-md-3 col-lg-4">
+        <a class="terms-link" href="terms-conditions.html">Terms &amp; Conditions</a>
+      </div>
+      <div class="col-4 col-md-6 col-lg-4">
+        <a class="privacy-link" href="privacy-policy.html">Privacy Policy</a>
+      </div>
+      <div class="col-4 col-md-3 col-lg-4">
+        <a class="airdrop-link" href="airdrop.html">AirDrop</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright py-3 text-center">
+    © 2018 nvest.ai -- Complexity Simplified Elegantly
+  </div>
+
+</footer>
+<!--/Footer-->
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" intergrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="js/nvest-scripts.js" type="text/javascript"></script>
+<script src="js/morphsvgplugin.min.js" type="text/javascript"></script>
+<script src="js/gsap-animation.js" type="text/javascript"></script>
+
+</body>
+</html>

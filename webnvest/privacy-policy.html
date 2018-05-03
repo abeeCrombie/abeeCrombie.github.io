@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>nvest</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/nvest.css" rel="stylesheet" type="text/css">
+
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js" type="text/javascript"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+    <link href="images/32-FAVI.png" rel="shortcut icon" type="image/x-icon">
+</head>
+<body class="body">
+
+<!-- Sign Up Modal -->
+<div class="modal fade" id="modalSubscriptionForm" tabindex="-1" role="dialog" aria-labelledby="toolVideoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h5 class="modal-title w-100 font-weight-bold">Sign Up</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                    <label data-error="wrong" data-success="right">Your name</label>
+                    <input type="text" class="form-control validate" placeholder="Enter your name">
+                </div>
+                <div class="md-form mb-4">
+                    <label data-error="wrong" data-success="right">Your email</label>
+                    <input type="email" class="form-control validate" placeholder="Enter your email">
+                </div>
+                <button class="btn btn-submit">submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand-md fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html" class="brand w-nav-brand">
+            <img src="images/nvest-logo-horizonal-white1.png">
+        </a>
+
+        <div class="d-block d-md-none ml-auto btn-telegram">
+            <a href="https://t.me/nvestai" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 189.473 189.473" style="enable-background:new 0 0 189.473 189.473;" xml:space="preserve">
+          <path d="M152.531,179.476c-1.48,0-2.95-0.438-4.211-1.293l-47.641-32.316l-25.552,18.386c-2.004,1.441-4.587,1.804-6.914,0.972   c-2.324-0.834-4.089-2.759-4.719-5.146l-12.83-48.622L4.821,93.928c-2.886-1.104-4.8-3.865-4.821-6.955   c-0.021-3.09,1.855-5.877,4.727-7.02l174.312-69.36c0.791-0.336,1.628-0.53,2.472-0.582c0.302-0.018,0.605-0.018,0.906-0.001   c1.748,0.104,3.465,0.816,4.805,2.13c0.139,0.136,0.271,0.275,0.396,0.42c1.11,1.268,1.72,2.814,1.835,4.389   c0.028,0.396,0.026,0.797-0.009,1.198c-0.024,0.286-0.065,0.571-0.123,0.854L159.898,173.38c-0.473,2.48-2.161,4.556-4.493,5.523   C154.48,179.287,153.503,179.476,152.531,179.476z M104.862,130.579l42.437,28.785L170.193,39.24l-82.687,79.566l17.156,11.638   C104.731,130.487,104.797,130.533,104.862,130.579z M69.535,124.178l5.682,21.53l12.242-8.809l-16.03-10.874   C70.684,125.521,70.046,124.893,69.535,124.178z M28.136,86.782l31.478,12.035c2.255,0.862,3.957,2.758,4.573,5.092l3.992,15.129  c0.183-1.745,0.974-3.387,2.259-4.624L149.227,38.6L28.136,86.782z" />
+        </svg>
+            </a>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="nav-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <div class="navbar-collapse collapse">
+            <ul class="navbar-nav ml-auto mt-3 mt-md-0">
+                <li class="nav-item">
+                    <a class="nav-link menu-item" href="#">Whitepaper</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-item go-to-features" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-item go-to-tokens" href="#">Token</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-item" href="https://medium.com/@nvestai" target="_blank">Blog</a>
+                </li>
+                <li class="nav-item country-selector dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="images/usa-flag.svg">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">
+                            <img src="images/brazil.svg">
+                            Brazil
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <img src="images/china.svg">
+                            China
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <img src="images/south-korea.svg">
+                            Korean
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <img src="images/japan.svg">
+                            Japan
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <img src="images/russia.svg">
+                            Russian
+                        </a>
+                        <a class="dropdown-item" href="#">
+                            <img src="images/spain.svg">
+                            Spain
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item signup">
+                    <a href="" class="btn btn-signup menu-item" data-toggle="modal" data-target="#modalSubscriptionForm">
+                        Sign Up
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="d-none d-md-block ml-auto btn-telegram">
+            <a href="https://t.me/nvestai" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 189.473 189.473" style="enable-background:new 0 0 189.473 189.473;" xml:space="preserve">
+                  <path d="M152.531,179.476c-1.48,0-2.95-0.438-4.211-1.293l-47.641-32.316l-25.552,18.386c-2.004,1.441-4.587,1.804-6.914,0.972   c-2.324-0.834-4.089-2.759-4.719-5.146l-12.83-48.622L4.821,93.928c-2.886-1.104-4.8-3.865-4.821-6.955   c-0.021-3.09,1.855-5.877,4.727-7.02l174.312-69.36c0.791-0.336,1.628-0.53,2.472-0.582c0.302-0.018,0.605-0.018,0.906-0.001   c1.748,0.104,3.465,0.816,4.805,2.13c0.139,0.136,0.271,0.275,0.396,0.42c1.11,1.268,1.72,2.814,1.835,4.389   c0.028,0.396,0.026,0.797-0.009,1.198c-0.024,0.286-0.065,0.571-0.123,0.854L159.898,173.38c-0.473,2.48-2.161,4.556-4.493,5.523   C154.48,179.287,153.503,179.476,152.531,179.476z M104.862,130.579l42.437,28.785L170.193,39.24l-82.687,79.566l17.156,11.638   C104.731,130.487,104.797,130.533,104.862,130.579z M69.535,124.178l5.682,21.53l12.242-8.809l-16.03-10.874   C70.684,125.521,70.046,124.893,69.535,124.178z M28.136,86.782l31.478,12.035c2.255,0.862,3.957,2.758,4.573,5.092l3.992,15.129  c0.183-1.745,0.974-3.387,2.259-4.624L149.227,38.6L28.136,86.782z" />
+                </svg>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<div class="container pt-5 mt-5 pb-5 mb-5">
+    <h1 class="text-center mt-5 mb-5">Privacy Policy</h1>
+    <p class="d-block w-100 mt-5 mb-5 text-right">Last Updated: March 6, 2018</p>
+    <h5 class="mt-4">Our Policy</h5>
+    <p>Welcome to the website (the “Site”) of nvest.ai. (“nvest”, “we”, “us” and/or “our”). The site is operated by nvest, and is designed to provide information about the nvest token, or NVAI <strong><em>, </em></strong>as well as services related to NVAI  (together with the Site, the “Services”) to our visitors (“you”, “your”). This Privacy Policy sets forth our policy with respect to handling of personal data you submit to us (“Personal Data”) and other information that is collected from visitors to the Site and Services.</p>
+    <h5 class="mt-4">Information We Collect</h5>
+    <p>When you interact with us through the Services, we may collect Personal Data and other information from you, as described below:</p>
+
+    <h5 class="mt-4">Personal Data That You Provide Through the Services</h5>
+    <p>We collect Personal Data from you when you voluntarily provide such information, such as when you contact us with inquiries, respond to a survey, register for access to the Services or use certain Services. Wherever Company collects Personal Data we make an effort to provide a link to this Privacy Policy.</p>
+    <p>By voluntarily providing us with Personal Data, you are consenting to our use of it in accordance with this Privacy Policy. If you provide Personal Data to the Services, you acknowledge and agree that such Personal Data may be transferred from your current location to servers managed by or on behalf of NVEST.</p>
+
+    <h5 class="mt-4">Cookies</h5>
+    <p>In operating the Services, we sometimes use a technology called &quot;cookies.&quot; A cookie is a piece of information that a server hosting our Services sends to your browser when you access the Services. Some of our Services set a cookie on your browser for the purposes of associating your browser with a given period of application usage, or “session”. In all cases in which we use cookies, we will not collect Personal Data except with your permission. We do not use third-party cookies. On most web browsers, there is a way to turn cookies off, but some of our Services require them to function correctly.</p>
+
+    <h5 class="mt-4">Our Use of Your Personal Data and Other Information</h5>
+    <p>We use the Personal Data you provide in a manner that is consistent with this Privacy Policy. If you provide Personal Data for a certain reason, we may use the Personal Data in connection with the reason for which it was provided. For instance, if you contact us by email, we will use the Personal Data you provide to answer your question or resolve your problem. Also, if you provide Personal Data in order to obtain access to the Services, we will use your Personal Data to provide you with access to such services. We may use this information to contact you in the future to tell you about services we believe will be of interest to you. In addition, if at any time you wish not to receive any future marketing communications or you wish to have your name deleted from our mailing lists, please contact us as indicated below.</p>
+
+    <h5 class="mt-4">Our Disclosure of Your Personal Data and Other Information</h5>
+    <p>We are not the business of selling your information. We consider this information to be a vital part of our relationship with you. There are, however, certain circumstances in which we may share your Personal Data with certain third parties without further notice to you, as set forth below:</p>
+
+    <h5 class="mt-4">Hosting, application, and service providers</h5>
+    <p>As noted above, NVEST, like many other businesses, makes use of other companies’ hosted services in the course of providing its Services. Examples of such functions include wallet and token services, mailing list management, cloud storage, and payment processing. When we employ another entity to perform a function of this nature, we only provide them with the information that they need to perform their specific function.</p>
+
+    <h5 class="mt-4">Legal Requirements</h5>
+    <p>Company may disclose your Personal Data if required to do so by law or in the good faith belief that such action is necessary to comply with a legal obligation, or to act in urgent circumstances to protect the personal safety of users of the Services or the public.</p>
+
+    <h5 class="mt-4">Your Choices</h5>
+    <p>You can visit the Site without providing any Personal Data. If you choose not to provide any Personal Data, you may not be able to use certain Services.</p>
+
+    <h5 class="mt-4">Exclusions</h5>
+    <p>This Privacy Policy does not apply to any Personal Data collected by Company other than Personal Data collected through the Services. This Privacy Policy shall not apply to any unsolicited information you provide to Company through the Services or through any other means. This includes, but is not limited to, information posted to any public areas of the Services, such as forums, any ideas for new products or modifications to existing products, and other unsolicited submissions (collectively, “Unsolicited Information”). All Unsolicited Information shall be deemed to be non-confidential and Company shall be free to reproduce, use, disclose, and distribute such Unsolicited Information to others without limitation or attribution.</p>
+
+    <h5 class="mt-4">Children</h5>
+    <p>Company does not knowingly collect Personal Data from children under the age of 13. If you are under the age of 13, please do not submit any Personal Data through the Services. We encourage parents and legal guardians to monitor their children’s Internet usage and to help enforce our Privacy Policy by instructing their children never to provide Personal Data on the Services without their permission. If you have reason to believe that a child under the age of 13 has provided Personal Data to Company through the Services, please contact us, and we will endeavor to delete that information from our databases.</p>
+
+    <h5 class="mt-4">Links to Other Web Sites</h5>
+    <p>This Privacy Policy applies only to the Services. The Services may contain links to other web sites not operated or controlled by Company (the “Third Party Sites”). The policies and procedures we described here do not apply to the Third Party Sites. The links from the Services do not imply that Company endorses or has reviewed the Third Party Sites. We suggest contacting those sites directly for information on their privacy policies.</p>
+
+    <h5 class="mt-4">Security</h5>
+    <p>We take reasonable steps to protect the Personal Data provided via the Services from loss, misuse, and unauthorized access, disclosure, alteration, or destruction. However, not all internet or email transmissions are secure. In particular, email sent to or from the Services may not be secure. Therefore, you should take special care in deciding what information you send to us via email. Please keep this in mind when disclosing any Personal Data to us via the internet.</p>
+
+    <h5 class="mt-4">Other Terms and Conditions</h5>
+    <p>Your access to and use of the Services is subject to the Terms of Service at www.nvest.ai.</p>
+
+    <h5 class="mt-4">Changes to Company’s Privacy Policy</h5>
+    <p>The Services and our business may change from time to time. As a result, at times it may be necessary for Company to make changes to this Privacy Policy. Company reserves the right to update or modify this Privacy Policy at any time and from time to time without prior notice. Please review this policy periodically, and especially before you provide any Personal Data. This Privacy Policy was last updated on the date indicated above. Your continued use of the Services after any changes or revisions to this Privacy Policy shall indicate your agreement with the terms of such revised Privacy Policy.</p>
+
+    <h5 class="mt-4">Access to Information; Contacting Company</h5>
+    <p>To keep your Personal Data accurate, current, and complete, please contact us as specified below. We will take reasonable steps to update or correct Personal Data in our possession that you have previously submitted via the Services.</p>
+
+    <hr class="mt-5">
+    <p>Please also feel free to contact us if you have any questions about Company’s Privacy Policy or the information practices of the Services. You may contact us at info@nvest.io</p>
+</div>
+
+
+<!--Footer-->
+<footer class="pt-3">
+    <div class="container">
+        <div class="row text-left text-md-center">
+            <div class="col-sm-8 col-md-3 col-lg-4">
+                <div>
+                    Get in touch
+                </div>
+                <div>
+                    <div class="icon">
+                        <a href="mailto: avi@nvest.io">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path d="M464 64h58C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h516c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h516zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400h58z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://t.me/nvestai" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 189.473 189.473" style="enable-background:new 0 0 189.473 189.473;" xml:space="preserve">
+                                <path d="M152.531,179.476c-1.48,0-2.95-0.438-4.211-1.293l-47.641-32.316l-25.552,18.386c-2.004,1.441-4.587,1.804-6.914,0.972   c-2.324-0.834-4.089-2.759-4.719-5.146l-12.83-48.622L4.821,93.928c-2.886-1.104-4.8-3.865-4.821-6.955   c-0.021-3.09,1.855-5.877,4.727-7.02l174.312-69.36c0.791-0.336,1.628-0.53,2.472-0.582c0.302-0.018,0.605-0.018,0.906-0.001   c1.748,0.104,3.465,0.816,4.805,2.13c0.139,0.136,0.271,0.275,0.396,0.42c1.11,1.268,1.72,2.814,1.835,4.389   c0.028,0.396,0.026,0.797-0.009,1.198c-0.024,0.286-0.065,0.571-0.123,0.854L159.898,173.38c-0.473,2.48-2.161,4.556-4.493,5.523   C154.48,179.287,153.503,179.476,152.531,179.476z M104.862,130.579l42.437,28.785L170.193,39.24l-82.687,79.566l17.156,11.638   C104.731,130.487,104.797,130.533,104.862,130.579z M69.535,124.178l5.682,21.53l12.242-8.809l-16.03-10.874   C70.684,125.521,70.046,124.893,69.535,124.178z M28.136,86.782l31.478,12.035c2.255,0.862,3.957,2.758,4.573,5.092l3.992,15.129  c0.183-1.745,0.974-3.387,2.259-4.624L149.227,38.6L28.136,86.782z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8 col-md-6 col-lg-4">
+                <div>
+                    Follow us
+                </div>
+                <div>
+                    <div class="icon">
+                        <a href="https://www.facebook.com/nvestai/" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path d="M448 56.7v398.5c0 13.7-11.1 24.7-24.7 24.7H309.1V306.5h58.2l8.7-67.6h-67v-43.2c0-19.6 5.4-32.9 33.5-32.9h35.8v-60.5c-6.2-.8-27.4-2.7-52.2-2.7-51.6 0-87 31.5-87 89.4v49.9h-58.4v67.6h58.4V480H24.7C11.1 480 0 468.9 0 455.3V56.7C0 43.1 11.1 32 24.7 32h398.5c13.7 0 24.8 11.1 24.8 24.7z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://twitter.com/nvest_dot_ai" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://github.com/nvestai" target="_blank">
+                            <svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5q0 251-146.5 451.5t-378.5 277.5q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-85-13.5q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103zm-477 1103q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zm31 34q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zm30 45q9-7 0-19-8-13-17-6-9 5 0 18t17 7zm42 42q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zm57 25q3-11-13-16-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zm58-10q-2-11-18-9-16 3-14 15t18 8 14-14z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://www.reddit.com/"" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path d="M201.5 305.5c-13.8 0-24.9-11.1-24.9-24.6 0-13.8 11.1-24.9 24.9-24.9 13.6 0 24.6 11.1 24.6 24.9 0 13.6-11.1 24.6-24.6 24.6zM504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-132.3-41.2c-9.4 0-17.7 3.9-23.8 10-22.4-15.5-52.6-25.5-86.1-26.6l17.4-78.3 55.4 12.5c0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.3 24.9-24.9s-11.1-24.9-24.9-24.9c-9.7 0-18 5.8-22.1 13.8l-61.2-13.6c-3-.8-6.1 1.4-6.9 4.4l-19.1 86.4c-33.2 1.4-63.1 11.3-85.5 26.8-6.1-6.4-14.7-10.2-24.1-10.2-34.9 0-46.3 46.9-14.4 62.8-1.1 5-1.7 10.2-1.7 15.5 0 52.6 59.2 95.2 132 95.2 73.1 0 132.3-42.6 132.3-95.2 0-5.3-.6-10.8-1.9-15.8 31.3-16 19.8-62.5-14.9-62.5zM302.8 331c-18.2 18.2-76.1 17.9-93.6 0-2.2-2.2-6.1-2.2-8.3 0-2.5 2.5-2.5 6.4 0 8.6 22.8 22.8 87.3 22.8 110.2 0 2.5-2.2 2.5-6.1 0-8.6-2.2-2.2-6.1-2.2-8.3 0zm7.7-75c-13.6 0-24.6 11.1-24.6 24.9 0 13.6 11.1 24.6 24.6 24.6 13.8 0 24.9-11.1 24.9-24.6 0-13.8-11-24.9-24.9-24.9z"/>
+                        </svg>
+                        </a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://medium.com/@nvestai" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                <path d="M0 32v448h548V32H0zm372.2 106.1l-24 23c-2.1 1.6-3.1 4.2-2.7 6.7v169.3c-.4 2.6.6 5.2 2.7 6.7l23.5 23v5.1h-118V367l24.3-23.6c2.4-2.4 2.4-3.1 2.4-6.7V199.8l-67.6 171.6h-9.1L125 199.8v115c-.7 4.8 1 9.7 4.4 13.2l31.6 38.3v5.1H71.2v-5.1l31.6-38.3c3.4-3.5 4.9-8.4 4.1-13.2v-133c.4-3.7-1-7.3-3.8-9.8L75 138.1V133h87.3l67.4 148L289 133.1h83.2v5z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="icon">
+                        <a href="https://www.youtube.com/channel/UC2gCI-ExBvwus4ZxNGNlCNQ" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-3 col-lg-4">
+                <a href="" class="btn btn-signup" data-toggle="modal" data-target="#modalSubscriptionForm">
+                    Sign Up
+                </a>
+            </div>
+        </div>
+        <div class="row footer-links text-center">
+            <div class="col-4 col-md-3 col-lg-4">
+                <a class="terms-link" href="terms-conditions.html">Terms &amp; Conditions</a>
+            </div>
+            <div class="col-4 col-md-6 col-lg-4">
+                <a class="privacy-link" href="privacy-policy.html">Privacy Policy</a>
+            </div>
+            <div class="col-4 col-md-3 col-lg-4">
+                <a class="airdrop-link" href="airdrop.html">AirDrop</a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright py-3 text-center">
+        © 2018 nvest.ai -- Complexity Simplified Elegantly
+    </div>
+
+</footer>
+<!--/Footer-->
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" intergrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh5U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="js/nvest-scripts.js" type="text/javascript"></script>
+<script src="js/morphsvgplugin.min.js" type="text/javascript"></script>
+<script src="js/gsap-animation.js" type="text/javascript"></script>
+
+</body>
+</html>

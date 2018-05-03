@@ -1,8 +1,0 @@
-"id","order","score","weight","color","label"
-"TD",1,4000,0.5,"#0a033a","Technology Development"
-"MR",2,600,0.5,"#1e0d98","Marketing & Related"
-"EF",3,600,0.5,"#2209db","Exchange Fees"
-"DF",4,200,1,"#7666f9","Data Feeds"
-"O",5,150,1,"#9c90fb","Operational"
-"LA",6,150,1,"#c4bdfb","Legal & Audit"
-"R",7,300,1,"#e1def8","Reserve"
