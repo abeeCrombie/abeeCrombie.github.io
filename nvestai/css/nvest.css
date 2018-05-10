@@ -666,7 +666,7 @@ ul.navbar-nav .country-selector .dropdown-toggle img {
     float: right;
 }
 .section-3 .images-wrapper {
-    height: 500px;
+    height: 400px;
     position: relative;
 }
 .section-3 .pilot-img,
@@ -675,7 +675,7 @@ ul.navbar-nav .country-selector .dropdown-toggle img {
     top: 0;
     left: 0;
 }
-.section-3 .wizard-img {
+.section-3 .wizard-img img {
     display: none;
 }
 
@@ -1795,9 +1795,22 @@ footer .footer-links a.airdrop-link {
 /******************** End of Robot animation ******************/
 
 
+/******************** Loading Animation styles ****************/
 
 .appear-on-scroll,
 .appear-on-scroll-up,
 .appear-on-scroll-right {
     visibility: hidden;
 }
+
+/******************** End of Loading Animation styles *********/
+
+/******************** Image modal bootstrap overwrite *********/
+
+
+
+.full-image-modal {
+    max-width: none !important;
+}
+
+/******************** End of Image modal bootstrap overwrite **/

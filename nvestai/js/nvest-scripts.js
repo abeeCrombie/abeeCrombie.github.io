@@ -40,8 +40,8 @@ $('.section-3 .pilot-btn').click(function () {
     if (!$(this).hasClass('active')) {
         $(this).addClass('active');
         $('.section-3 .wizard-btn').removeClass('active');
-        $('.section-3 .wizard-img').fadeOut();
-        $('.section-3 .pilot-img').fadeIn();
+        $('.section-3 .wizard-img img').fadeOut();
+        $('.section-3 .pilot-img img').fadeIn();
 
     }
 });
@@ -49,8 +49,8 @@ $('.section-3 .wizard-btn').click(function () {
     if (!$(this).hasClass('active')) {
         $(this).addClass('active');
         $('.section-3 .pilot-btn').removeClass('active');
-        $('.section-3 .pilot-img').fadeOut();
-        $('.section-3 .wizard-img').fadeIn();
+        $('.section-3 .pilot-img img').fadeOut();
+        $('.section-3 .wizard-img img').fadeIn();
     }
 });
 
@@ -58,9 +58,9 @@ $('.section-3 .wizard-btn').click(function () {
 var $imageSrc;
 $('.open-fill-size').click(function() {
     if ($(this).parent().hasClass('pilot-img')) {
-        $imageSrc = 'images/platform.png';
+        $imageSrc = 'images/pilot-big.png';
     } else if ($(this).parent().hasClass('wizard-img')) {
-        $imageSrc = 'images/einstein.jpg';
+        $imageSrc = 'images/wizard-big.png';
     }
 });
 $('#fullImgModal').on('show.bs.modal', function (e) {
